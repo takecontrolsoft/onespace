@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+    <!-- SEO Meta Tags -->
+    <title>Календар - Единен портал за счетоводители</title>
+    <meta name="description" content="Календар с важни срокове и декларации. Следете всички важни дати за подаване на документи и плащания.">
+    <meta name="keywords" content="календар, счетоводители, срокове, декларации, НАП, НОИ, НСИ">
+    <meta name="author" content="OneSpace">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onespace.bg/calendar.html">
+    <meta property="og:title" content="Календар - OneSpace Portal">
+    <meta property="og:description" content="Календар с важни срокове и декларации. Следете всички важни дати за подаване на документи и плащания.">
+    <meta property="og:image" content="https://onespace.bg/images/onespace-logo.png">
+    <meta property="og:site_name" content="OneSpace Portal">
+    <meta property="og:locale" content="bg_BG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Календар - OneSpace Portal">
+    <meta property="twitter:description" content="Календар с важни срокове и декларации. Следете всички важни дати за подаване на документи и плащания.">
+    <meta property="twitter:image" content="https://onespace.bg/images/onespace-logo.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3c72">
+    
+<link rel="stylesheet" href="styles.css">
+<style>
+    .calendar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .calendar-title {
+        font-size: 28px;
+        color: #006e7d;
+        margin: 0;
+    }
+    
+    .calendar-nav {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .nav-btn {
+        padding: 8px 16px;
+        background: #006e7d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.2s;
+    }
+    
+    .nav-btn:hover {
+        background: #004d56;
+    }
+    
+    .current-month {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2c3e50;
+        min-width: 200px;
+        text-align: center;
+    }
+    
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1px;
+        background: #e1e4e8;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .calendar-day-header {
+        background: #006e7d;
+        color: white;
+        padding: 12px 8px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    .calendar-day {
+        background: white;
+        padding: 8px 4px;
+        min-height: 60px;
+        border: 1px solid #e1e4e8;
+        position: relative;
+        cursor: pointer;
+        transition: background 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .calendar-day:hover {
+        background: #f8f9fa;
+    }
+    
+    .calendar-day.other-month {
+        background: #f8f9fa;
+        color: #6c757d;
+    }
+    
+    .calendar-day.today {
+        background: #e3f2fd;
+        border: 2px solid #006e7d;
+    }
+    
+    .calendar-day.has-deadline {
+        background: #fff3e0;
+        border-left: 4px solid #ff9800;
+    }
+    
+    .calendar-day.urgent {
+        background: #ffebee;
+        border-left: 4px solid #f44336;
+    }
+    
+    .day-number {
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    
+    .day-month-year {
+        font-size: 10px;
+        color: #666;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    
+    .deadline-count {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background: #f44336;
+        color: white;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 600;
+    }
+    
+    .calendar-day.has-deadline .deadline-count {
+        background: #ff9800;
+    }
+    
+    .calendar-day.urgent .deadline-count {
+        background: #f44336;
+    }
+    
+    .deadline-item {
+        font-size: 11px;
+        padding: 2px 4px;
+        margin: 1px 0;
+        border-radius: 3px;
+        background: #ff9800;
+        color: white;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .deadline-item.urgent {
+        background: #f44336;
+    }
+    
+    .deadline-item.important {
+        background: #ff9800;
+    }
+    
+    .deadline-item.regular {
+        background: #4caf50;
+    }
+    
+    .upcoming-deadlines {
+        margin-top: 30px;
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .upcoming-title {
+        font-size: 20px;
+        color: #006e7d;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .deadline-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .deadline-item-large {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border-radius: 6px;
+        border-left: 4px solid;
+        background: #f8f9fa;
+        transition: all 0.2s;
+    }
+    
+    .deadline-item-large:hover {
+        background: #e9ecef;
+        transform: translateX(4px);
+    }
+    
+    .deadline-item-large.urgent {
+        border-left-color: #f44336;
+        background: #ffebee;
+    }
+    
+    .deadline-item-large.important {
+        border-left-color: #ff9800;
+        background: #fff3e0;
+    }
+    
+    .deadline-item-large.regular {
+        border-left-color: #4caf50;
+        background: #e8f5e8;
+    }
+    
+    .deadline-date {
+        font-weight: 600;
+        color: #2c3e50;
+    }
+    
+    .deadline-description {
+        flex: 1;
+        margin: 0 15px;
+        color: #495057;
+    }
+    
+    .deadline-days-left {
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+    
+    .deadline-days-left.urgent {
+        background: #f44336;
+        color: white;
+    }
+    
+    .deadline-days-left.important {
+        background: #ff9800;
+        color: white;
+    }
+    
+    .deadline-days-left.regular {
+        background: #4caf50;
+        color: white;
+    }
+    
+    .legend {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+    }
+    
+    .legend-color {
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+    }
+    
+    .legend-color.urgent {
+        background: #f44336;
+    }
+    
+    .legend-color.important {
+        background: #ff9800;
+    }
+    
+    .legend-color.regular {
+        background: #4caf50;
+    }
+    
+    /* Mobile Dialog */
+    .mobile-dialog {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-dialog.show {
+        display: flex;
+    }
+    
+    .mobile-dialog-content {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 90%;
+        max-height: 80%;
+        overflow-y: auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        position: relative;
+    }
+    
+    .mobile-dialog-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #666;
+        cursor: pointer;
+        padding: 5px;
+    }
+    
+    .mobile-dialog-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1e3c72;
+        margin-bottom: 10px;
+        padding-right: 30px;
+    }
+    
+    .mobile-dialog-date {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+    
+    .mobile-dialog-deadlines {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .mobile-dialog-deadline {
+        padding: 12px;
+        border-radius: 8px;
+        border-left: 4px solid;
+    }
+    
+    .mobile-dialog-deadline.urgent {
+        background: #ffebee;
+        border-left-color: #f44336;
+    }
+    
+    .mobile-dialog-deadline.important {
+        background: #fff3e0;
+        border-left-color: #ff9800;
+    }
+    
+    .mobile-dialog-deadline.regular {
+        background: #e8f5e8;
+        border-left-color: #4caf50;
+    }
+    
+    .mobile-dialog-deadline-title {
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 4px;
+    }
+    
+    .mobile-dialog-deadline-institution {
+        font-size: 14px;
+        color: #666;
+    }
+    
+    @media (max-width: 768px) {
+        .calendar-header {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        
+        .calendar-nav {
+            justify-content: center;
+        }
+        
+        .calendar-day {
+            min-height: 50px;
+            padding: 4px 2px;
+            cursor: pointer;
+        }
+        
+        .day-month-year {
+            font-size: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .deadline-count {
+            width: 16px;
+            height: 16px;
+            font-size: 9px;
+        }
+        
+        .calendar-day.has-deadline,
+        .calendar-day.urgent {
+            cursor: pointer;
+        }
+        
+        .day-number {
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .deadline-item {
+            font-size: 8px;
+            padding: 1px 3px;
+            margin: 0.5px 0;
+            display: none; /* Скриваме детайлите на мобилно */
+        }
+        
+        .calendar-day.has-deadline::after,
+        .calendar-day.urgent::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        .calendar-day.has-deadline::after {
+            background: #ff9800;
+        }
+        
+        .calendar-day.urgent::after {
+            background: #f44336;
+        }
+        
+        .deadline-item-large {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .deadline-description {
+            margin: 0;
+        }
+        
+        .legend {
+            justify-content: center;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <img src="images/onespace-logo.png" alt="OneSpace Logo" class="site-logo">
+            <div class="header-text">
+                <h1>Единен портал за счетоводители</h1>
+                <p class="subtitle">Календар - важни срокове и декларации</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-tabs">
+                <li><a href="index.html" class="nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="nav-tab">Институции</a></li>
+                <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+                <li><a href="calendar.html" class="nav-tab active">Календар</a></li>
+                <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
+                <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-nav-tabs">
+                <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
+                <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                <li><a href="calendar.html" class="mobile-nav-tab active">Календар</a></li>
+                <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
+                <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+
+    <div class="content-section">
+        <div class="header-with-back">
+            <a href="index.html" class="back-link">←</a>
+            <h2 class="section-title">Календар</h2>
+        </div>
+        
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <div class="calendar-nav">
+                    <button class="nav-btn" onclick="previousMonth()" data-arrow="←">← Предишен</button>
+                    <div class="current-month" id="currentMonth"></div>
+                    <button class="nav-btn" onclick="nextMonth()" data-arrow="→">Следващ →</button>
+                    <button class="nav-btn today-btn" onclick="goToToday()">Днес</button>
+                </div>
+            </div>
+            
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Calendar will be generated by JavaScript -->
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color urgent"></div>
+                    <span>Спешни срокове (1-3 дни)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color important"></div>
+                    <span>Важни срокове (4-7 дни)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color regular"></div>
+                    <span>Обичайни срокове (7+ дни)</span>
+                </div>
+            </div>
+            
+            <div class="upcoming-deadlines">
+                <h3 class="upcoming-title">🚨 Крайни срокове за месеца</h3>
+                <div class="deadline-list" id="upcomingDeadlines">
+                    <!-- Monthly deadlines will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Мобилен диалог за детайли на деня -->
+<div class="mobile-dialog" id="mobileDialog">
+    <div class="mobile-dialog-content">
+        <button class="mobile-dialog-close" onclick="closeMobileDialog()">×</button>
+        <h3 class="mobile-dialog-title" id="dialogTitle">Детайли за деня</h3>
+        <div class="mobile-dialog-date" id="dialogDate"></div>
+        <div class="mobile-dialog-deadlines" id="dialogDeadlines">
+            <!-- Детайлите ще бъдат добавени от JavaScript -->
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="calendar.js"></script>
+</body>
+</html>

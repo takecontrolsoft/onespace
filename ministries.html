@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+
+    <!-- SEO Meta Tags -->
+    <title>Министерства - Единен портал за счетоводители</title>
+    <meta name="description"
+        content="Официални сайтове на министерствата на България. Бърз достъп до всички министерства и държавни институции.">
+    <meta name="keywords" content="министерства, България, държавни институции, правителство">
+    <meta name="author" content="OneSpace">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onespace.bg/ministries.html">
+    <meta property="og:title" content="Министерства - OneSpace Portal">
+    <meta property="og:description"
+        content="Официални сайтове на министерствата на България. Бърз достъп до всички министерства и държавни институции.">
+    <meta property="og:image" content="https://onespace.bg/images/onespace-logo.png">
+    <meta property="og:site_name" content="OneSpace Portal">
+    <meta property="og:locale" content="bg_BG">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Министерства - OneSpace Portal">
+    <meta property="twitter:description"
+        content="Официални сайтове на министерствата на България. Бърз достъп до всички министерства и държавни институции.">
+    <meta property="twitter:image" content="https://onespace.bg/images/onespace-logo.png">
+
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3c72">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="images/onespace-logo.png" alt="OneSpace Logo" class="site-logo">
+                <div class="header-text">
+                    <h1>Единен портал за счетоводители</h1>
+                    <p class="subtitle">Официални сайтове на министерствата
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+                <ul class="nav-tabs">
+                <li><a href="index.html" class="nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="nav-tab">Институции</a></li>
+                <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+                <li><a href="calendar.html" class="nav-tab">Календар</a></li>
+                <li><a href="ministries.html" class="nav-tab active">Министерства</a></li>
+                <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu">
+                <ul class="mobile-nav-tabs">
+                <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
+                <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                <li><a href="calendar.html" class="mobile-nav-tab">Календар</a></li>
+                <li><a href="ministries.html" class="mobile-nav-tab active">Министерства</a></li>
+                <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="content-section">
+            <div class="header-with-back">
+                <a href="index.html" class="back-link">←</a>
+                <h2 class="section-title">Министерства</h2>
+            </div>
+            <div class="header-with-search">
+                <div class="search-box">
+                    <input type="text" placeholder="Търсене в министерства..." onkeyup="filterMinistries()">
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 20px;">Основни министерства</h3>
+            <div class="ministries-list" id="mainMinistries">
+                <!-- Министерски съвет -->
+                <a href="https://www.gov.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерски съвет</div>
+                        <div class="ministry-subtitle">Централно координиращ орган</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <!-- Министерство на финансите -->
+                <a href="https://www.minfin.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на финансите</div>
+                        <div class="ministry-subtitle">Бюджет, данъчна политика, държавни разходи</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <!-- Министерство на външните работи -->
+                <a href="https://www.mfa.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на външните работи</div>
+                        <div class="ministry-subtitle">Международни отношения и консулски услуги</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <!-- Министерство на вътрешните работи -->
+                <a href="https://www.mvr.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на вътрешните работи</div>
+                        <div class="ministry-subtitle">Обществен ред и гражданска регистрация</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <!-- Министерство на отбраната -->
+                <a href="https://www.mod.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на отбраната</div>
+                        <div class="ministry-subtitle">Отбрана и сигурност</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <!-- Министерство на правосъдието -->
+                <a href="https://mjs.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на правосъдието</div>
+                        <div class="ministry-subtitle">Правна рамка и съдебна система</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <!-- Министерство на регионалното развитие -->
+                <a href="https://www.mrrb.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на регионалното развитие</div>
+                        <div class="ministry-subtitle">Инфраструктура и регионална политика</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <!-- Министерство на електронното управление -->
+                <a href="https://www.e-gov.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на електронното управление</div>
+                        <div class="ministry-subtitle">Дигитализация и е-услуги</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+            </div>
+
+            <h3 style="margin-top: 40px; margin-bottom: 20px;">Други ключови министерства</h3>
+            <div class="ministries-list" id="otherMinistries">
+                <a href="https://www.mon.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на образованието и науката</div>
+                        <div class="ministry-subtitle">Образование, наука и иновации</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.mh.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на здравеопазването</div>
+                        <div class="ministry-subtitle">Здравна политика и медицински услуги</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.mlsp.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на труда и социалната политика</div>
+                        <div class="ministry-subtitle">Трудови отношения и социални услуги</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.mzh.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на земеделието и храните</div>
+                        <div class="ministry-subtitle">Селско стопанство и хранителна безопасност</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.moew.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на околната среда и водите</div>
+                        <div class="ministry-subtitle">Екология и водни ресурси</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.mi.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на икономиката</div>
+                        <div class="ministry-subtitle">Икономическа политика и развитие</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.mc.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на културата</div>
+                        <div class="ministry-subtitle">Културна политика и наследство</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.mtc.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на транспорта и съобщенията</div>
+                        <div class="ministry-subtitle">Транспортна инфраструктура и пощи</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.me.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на енергетиката</div>
+                        <div class="ministry-subtitle">Енергийна политика и ефективност</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+
+                <a href="https://www.tourism.government.bg" class="ministry-row" target="_blank">
+                    <div class="ministry-herb">
+                        <img src="images/bg-gerb.png" alt="Герб на България" class="ministry-herb-img">
+                    </div>
+                    <div class="ministry-info">
+                        <div class="ministry-title">Министерство на туризма</div>
+                        <div class="ministry-subtitle">Туристическа политика и развитие</div>
+                    </div>
+                    <div class="ministry-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Рекламна лента слайдър -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
