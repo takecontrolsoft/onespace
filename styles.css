@@ -465,10 +465,29 @@ nav {
     border-bottom: 2px solid #f0f0f0;
 }
 
+.link-category h3 a {
+    color: #006e7d;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.link-category h3 a:hover {
+    color: #218838;
+    text-decoration: none;
+}
+
 .link-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    height: 100%;
+}
+
+.link-category {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .link-list a {
@@ -485,6 +504,32 @@ nav {
     color: #1e3c72;
     padding-left: 16px;
     text-decoration: none;
+}
+
+/* Special styling for "Вижте всички..." links - same as bank buttons */
+.link-list a[href$=".html"] {
+    background: #006e7d;
+    color: white;
+    border: 1px solid #006e7d;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: auto;
+    text-align: center;
+    font-size: 14px;
+    transition: background 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.link-list a[href$=".html"]:hover {
+    background: #218838;
+    border-color: #218838;
+    color: white;
+    text-decoration: none;
+    transform: none;
+    box-shadow: none;
+    padding-left: 16px;
 }
 
 .section-title {
