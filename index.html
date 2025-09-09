@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="cross-origin">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="cross-origin">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+    <!-- SEO Meta Tags -->
+    <title>Единен портал за счетоводители - OneSpace</title>
+    <meta name="description" content="Бърз достъп до държавни институции, банкови услуги и счетоводни инструменти. Календар на счетоводителя с важни срокове и декларации.">
+    <meta name="keywords" content="счетоводители, НАП, НОИ, НСИ, банки, календар, декларации, срокове, България">
+    <meta name="author" content="OneSpace">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onespace.bg/">
+    <meta property="og:title" content="Единен портал за счетоводители - OneSpace">
+    <meta property="og:description" content="Бърз достъп до държавни институции, банкови услуги и счетоводни инструменти. Календар на счетоводителя с важни срокове и декларации.">
+    <meta property="og:image" content="https://onespace.bg/images/onespace-logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="OneSpace Portal">
+    <meta property="og:locale" content="bg_BG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://onespace.bg/">
+    <meta property="twitter:title" content="Единен портал за счетоводители - OneSpace">
+    <meta property="twitter:description" content="Бърз достъп до държавни институции, банкови услуги и счетоводни инструменти. Календар на счетоводителя с важни срокове и декларации.">
+    <meta property="twitter:image" content="https://onespace.bg/images/onespace-logo.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3c72">
+    <meta name="msapplication-TileColor" content="#1e3c72">
+    <meta name="msapplication-TileImage" content="favicon-32x32.png">
+    
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <img src="images/onespace-logo.png" alt="OneSpace Logo" class="site-logo">
+            <div class="header-text">
+                <h1>Единен портал за счетоводители</h1>
+                <p class="subtitle">Бърз достъп до държавни институции, банкови услуги и счетоводни инструменти</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-tabs">
+                <li><a href="index.html" class="nav-tab active">Начало</a></li>
+            <li><a href="institutions.html" class="nav-tab">Институции</a></li>
+            <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+            <li><a href="calendar.html" class="nav-tab">Календар</a></li>
+            <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
+            <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-nav-tabs">
+                <li><a href="index.html" class="mobile-nav-tab active">Начало</a></li>
+                <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
+                <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                <li><a href="calendar.html" class="mobile-nav-tab">Календар</a></li>
+                <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
+                <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <!-- Main Institutions -->
+    <div class="main-institutions">
+        <a href="https://portal.nra.bg/" target="_blank" class="main-institution-card">
+            <div class="main-institution-logo">
+                <img src="images/nra-logo.png" alt="Е-услуги НАП" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display: none;">💻</span>
+            </div>
+            <h3 class="main-institution-title">Е-услуги НАП</h3>
+            <p class="main-institution-description">Електронни услуги на НАП</p>
+        </a>
+
+        <a href="https://www.nssi.bg" target="_blank" class="main-institution-card">
+            <div class="main-institution-logo">
+                <img src="images/noi_logo.png" alt="НОИ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display: none;">🏥</span>
+            </div>
+            <h3 class="main-institution-title">НОИ</h3>
+            <p class="main-institution-description">Национален осигурителен институт</p>
+        </a>
+
+        <a href="https://www.nsi.bg" target="_blank" class="main-institution-card">
+            <div class="main-institution-logo">
+                <img src="images/nsi_logo.png" alt="НСИ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display: none;">📊</span>
+            </div>
+            <h3 class="main-institution-title">НСИ</h3>
+            <p class="main-institution-description">Национален статистически институт</p>
+        </a>
+
+        <a href="https://www.bnb.bg" target="_blank" class="main-institution-card">
+            <div class="main-institution-logo">
+                <img src="images/bnb_logo.png" alt="БНБ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display: none;">🏦</span>
+            </div>
+            <h3 class="main-institution-title">БНБ</h3>
+            <p class="main-institution-description">Българска народна банка</p>
+        </a>
+       
+    </div>
+
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+         <div class="hero-stats">               
+            <div class="hero-stat">
+                <span class="hero-stat-number">Бърз достъп</span>
+                <span class="hero-stat-label">Институции, банкиране, министерства, счетоводни инструменти</span>
+            </div>
+          
+        </div>
+    </div>
+</section>
+
+    <!-- Quick Access Section -->
+    <div class="content-section">
+        <div class="useful-links">
+            <!-- Държавни институции -->
+            <div class="link-category">
+                <h3>🏛️ Институции</h3>
+                <div class="link-list">
+                    <a href="https://portal.nra.bg/" target="_blank">Е-услуги НАП</a>
+                    <a href="https://www.nssi.bg" target="_blank">НОИ - Национален осигурителен институт</a>
+                    <a href="https://www.nsi.bg" target="_blank">НСИ - Национален статистически институт</a>
+                    <a href="https://portal.registryagency.bg/" target="_blank">Търговски регистър</a>
+                    <a href="https://www.bulstat.bg" target="_blank">БУЛСТАТ</a>
+                    <a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation" target="_blank">VIES</a>
+                    <a href="https://www.bnb.bg" target="_blank">БНБ - Българска народна банка</a>
+                    <a href="https://www.egov.bg" target="_blank">eGov.bg</a>
+                    <a href="institutions.html">Вижте всички институции →</a>
+                </div>
+            </div>
+
+            <!-- Банки -->
+            <div class="link-category">
+                <h3>🏦 Банкиране</h3>
+                <div class="link-list">
+                    <a href="https://www.unicreditbulbank.bg" target="_blank">UniCredit Bulbank</a>
+                    <a href="https://www.dsk.bg" target="_blank">ДСК Банк</a>
+                    <a href="https://www.fibank.bg" target="_blank">Фибанк</a>
+                    <a href="https://www.postbank.bg" target="_blank">Пощенска банка</a>
+                    <a href="https://www.raiffeisenbank.bg" target="_blank">Райфайзенбанк</a>
+                    <a href="https://www.ubs.bg" target="_blank">UBS Банк</a>
+                    <a href="https://www.ing.bg" target="_blank">ING Банк</a>
+                    <a href="banks.html">Вижте всички банки →</a>
+                </div>
+            </div>
+
+            <!-- Министерства -->
+            <div class="link-category">
+                <h3>🏛️ Министерства</h3>
+                <div class="link-list">
+                    <a href="https://www.gov.bg" target="_blank">Министерски съвет</a>
+                    <a href="https://www.minfin.bg" target="_blank">Министерство на финансите</a>
+                    <a href="https://www.mfa.bg" target="_blank">Министерство на външните работи</a>
+                    <a href="https://www.mvr.bg" target="_blank">Министерство на вътрешните работи</a>
+                    <a href="https://www.mod.bg" target="_blank">Министерство на отбраната</a>
+                    <a href="https://mjs.bg" target="_blank">Министерство на правосъдието</a>
+                    <a href="ministries.html">Вижте всички министерства →</a>
+                </div>
+            </div>
+
+            <!-- Полезни връзки -->
+            <div class="link-category">
+                <h3>🔗 Полезни връзки</h3>
+                <div class="link-list">
+                    <a href="https://www.bghelix.com" target="_blank">BG Helix - Счетоводни услуги</a>
+                    <a href="https://www.lex.bg" target="_blank">Lex.bg - Правна информация</a>
+                    <a href="https://www.parliament.bg" target="_blank">Народно събрание</a>
+                    <a href="https://www.economy.bg" target="_blank">Министерство на икономиката</a>
+                    <a href="https://www.mon.bg" target="_blank">Министерство на образованието</a>
+                    <a href="useful.html">Вижте всички полезни връзки →</a>
+                </div>
+            </div>
+
+            <!-- Правни услуги -->
+            <div class="link-category">
+                <h3>⚖️ Правни услуги</h3>
+                <div class="link-list">
+                    <a href="https://www.lex.bg" target="_blank">Lex.bg - Правна информация</a>
+                    <a href="https://www.parliament.bg" target="_blank">Народно събрание</a>
+                    <a href="https://www.constcourt.bg" target="_blank">Конституционен съд</a>
+                    <a href="https://www.supremecourt.bg" target="_blank">Върховен касационен съд</a>
+                    <a href="https://www.lex.bg/laws/ldoc/2134916091" target="_blank">Търговски закон</a>
+                    <a href="https://www.lex.bg/laws/ldoc/2134916092" target="_blank">Закони за счетоводството</a>
+                </div>
+            </div>
+
+            <!-- Счетоводни инструменти -->
+            <div class="link-category">
+                <h3>🧮 Счетоводни инструменти</h3>
+                <div class="link-list">
+                    <a href="https://www.nap.bg" target="_blank">НАП - Официален сайт</a>
+                    <a href="https://www.nssi.bg" target="_blank">НОИ - Официален сайт</a>
+                    <a href="https://www.nsi.bg" target="_blank">НСИ - Официален сайт</a>
+                    <a href="https://www.bnb.bg" target="_blank">БНБ - Валутни курсове</a>
+                    <a href="https://www.lex.bg" target="_blank">Lex.bg - Нормативна база</a>
+                </div>
+            </div>
+
+            <!-- Календар -->
+            <div class="link-category">
+                <h3>📅 Календар на счетоводителя</h3>
+                <div class="link-list">
+                    <a href="calendar.html">Януарски срокове</a>
+                    <a href="calendar.html">Февруарски срокове</a>
+                    <a href="calendar.html">Мартовски срокове</a>
+                    <a href="calendar.html">Априлски срокове</a>
+                    <a href="calendar.html">Майски срокове</a>
+                    <a href="calendar.html">Юнски срокове</a>
+                    <a href="calendar.html">Вижте пълния календар →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>

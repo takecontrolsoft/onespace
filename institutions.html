@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="cross-origin">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="cross-origin">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+    <!-- SEO Meta Tags -->
+    <title>Институции - Единен портал за счетоводители</title>
+    <meta name="description" content="Институции и услуги - НАП, НОИ, НСИ, БНБ, eGov.bg и други. Бърз достъп до официалните сайтове.">
+    <meta name="keywords" content="държавни институции, НАП, НОИ, НСИ, БНБ, eGov, България">
+    <meta name="author" content="OneSpace">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onespace.bg/institutions.html">
+    <meta property="og:title" content="Институции - OneSpace Portal">
+    <meta property="og:description" content="Институции и услуги - НАП, НОИ, НСИ, БНБ, eGov.bg и други. Бърз достъп до официалните сайтове.">
+    <meta property="og:image" content="https://onespace.bg/images/onespace-logo.png">
+    <meta property="og:site_name" content="OneSpace Portal">
+    <meta property="og:locale" content="bg_BG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Институции - OneSpace Portal">
+    <meta property="twitter:description" content="Институции и услуги - НАП, НОИ, НСИ, БНБ, eGov.bg и други. Бърз достъп до официалните сайтове.">
+    <meta property="twitter:image" content="https://onespace.bg/images/onespace-logo.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3c72">
+    
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <img src="images/onespace-logo.png" alt="OneSpace Logo" class="site-logo">
+            <div class="header-text">
+                <h1>Единен портал за счетоводители</h1>
+                <p class="subtitle">Институции и услуги</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-tabs">
+                <li><a href="index.html" class="nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="nav-tab active">Институции</a></li>
+                <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+                <li><a href="calendar.html" class="nav-tab">Календар</a></li>
+                <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
+                <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu">
+            <ul class="mobile-nav-tabs">
+                <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="mobile-nav-tab active">Институции</a></li>
+                <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                <li><a href="calendar.html" class="mobile-nav-tab">Календар</a></li>
+                <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
+                <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="content-section">
+        <div class="header-with-back">
+            <a href="index.html" class="back-link">←</a>
+            <h2 class="section-title">Институции</h2>
+        </div>
+        <div class="header-with-search">
+            <div class="search-box">
+                <input type="text" placeholder="Търсене в институции..." onkeyup="filterInstitutions(this.value)">
+            </div>
+        </div>
+        <div class="main-institutions">
+            <!-- НАП -->
+            <a href="https://nra.bg" class="main-institution-card" data-search="нап национална агенция приходи данъци декларации" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/nra-logo.png" alt="НАП" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">🏛️</span>
+                </div>
+                <h3 class="main-institution-title">НАП</h3>
+                <p class="main-institution-description">Национална агенция за приходите</p>
+            </a>
+
+            <!-- Е-услуги НАП -->
+            <a href="https://portal.nra.bg/" class="main-institution-card" data-search="е-услуги нап портал електронни услуги данъци" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/nra-logo.png" alt="Е-услуги НАП" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">💻</span>
+                </div>
+                <h3 class="main-institution-title">Е-услуги НАП</h3>
+                <p class="main-institution-description">Електронни услуги на НАП</p>
+            </a>
+            
+            <!-- НОИ -->
+            <a href="https://www.nssi.bg" class="main-institution-card" data-search="нои национален осигурителен институт социално осигуряване пенсии" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/noi_logo.png" alt="НОИ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">🏥</span>
+                </div>
+                <h3 class="main-institution-title">НОИ</h3>
+                <p class="main-institution-description">Национален осигурителен институт</p>
+            </a>
+            
+            <!-- НСИ -->
+            <a href="https://www.nsi.bg" class="main-institution-card" data-search="нси национален статистически институт статистика отчети" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/nsi_logo.png" alt="НСИ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">📊</span>
+                </div>
+                <h3 class="main-institution-title">НСИ</h3>
+                <p class="main-institution-description">Национален статистически институт</p>
+            </a>
+            
+            <!-- ИС Бизнес статистика -->
+            <a href="https://isbs.nsi.bg/ISBS/" class="main-institution-card" data-search="ис бизнес статистика нси отчети годишни" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/nsi_logo.png" alt="ИС Бизнес статистика" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">📈</span>
+                </div>
+                <h3 class="main-institution-title">ИС Бизнес статистика</h3>
+                <p class="main-institution-description">Информационна система "Бизнес статистика"</p>
+            </a>
+            
+            <!-- Търговски регистър -->
+            <a href="https://portal.registryagency.bg/" class="main-institution-card" data-search="търговски регистър юлнц фирми регистрация" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/tr_logo.png" alt="Търговски регистър" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">📋</span>
+                </div>
+                <h3 class="main-institution-title">Търговски регистър</h3>
+                <p class="main-institution-description">Регистрация на фирми и ЮЛНЦ</p>
+            </a>
+
+            <!-- БУЛСТАТ -->
+            <a href="https://www.bulstat.bg" class="main-institution-card" data-search="булстат регистър статистика фирми" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/bulstat_logo.png" alt="БУЛСТАТ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">📊</span>
+                </div>
+                <h3 class="main-institution-title">БУЛСТАТ</h3>
+                <p class="main-institution-description">Регистър Булстат</p>
+            </a>
+
+            <!-- VIES -->
+            <a href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation" class="main-institution-card" data-search="vies ддс валидация ес европейски съюз" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/vies_logo.png" alt="VIES" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">🌍</span>
+                </div>
+                <h3 class="main-institution-title">VIES</h3>
+                <p class="main-institution-description">Валидация на ДДС номера в ЕС</p>
+            </a>
+            
+
+            <!-- БНБ -->
+            <a href="https://www.bnb.bg" class="main-institution-card" data-search="бнб централна банка валутни курсове" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/bnb_logo.png" alt="БНБ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">🏦</span>
+                </div>
+                <h3 class="main-institution-title">БНБ</h3>
+                <p class="main-institution-description">Българска народна банка</p>
+            </a>
+
+            <!-- Електронно управление -->
+            <a href="https://www.egov.bg" class="main-institution-card" data-search="електронно управление egov е-услуги дигитализация" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/egov_logo.png" alt="eGov.bg" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">💻</span>
+                </div>
+                <h3 class="main-institution-title">eGov.bg</h3>
+                <p class="main-institution-description">Електронно управление</p>
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- Рекламна лента слайдър -->
+
+<script src="script.js"></script>
+</body>
+</html>
