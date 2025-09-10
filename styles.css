@@ -1452,3 +1452,519 @@ nav {
         font-size: 13px;
     }
 }
+
+/* Grid System for Footer */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-lg-4, .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .col-lg-4, .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Footer Styles */
+#footer {
+    background: #6c757d;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+}
+
+#footer .footer-top {
+    background: #6c757d;
+    padding: 25px 0 15px 0;
+    position: relative;
+}
+
+#footer .footer-top .footer-contact h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+
+#footer .footer-top .footer-contact h6 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #e9ecef;
+    margin-bottom: 8px;
+}
+
+#footer .footer-top .footer-contact h6 a {
+    color: #e9ecef;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 12px;
+    background: #495057;
+    border-radius: 20px;
+    transition: all 0.3s;
+    font-size: 12px;
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#footer .footer-top .footer-contact h6 a:hover {
+    color: #fff;
+    background: #006e7d;
+    text-decoration: none;
+}
+
+#footer .footer-top .footer-contact p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    color: #e9ecef;
+}
+
+#footer .footer-top .footer-links h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+#footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer .footer-top .footer-links ul li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+#footer .footer-top .footer-links ul li i {
+    font-size: 12px;
+    line-height: 1;
+    color: #e9ecef;
+    margin-right: 8px;
+}
+
+#footer .footer-top .footer-links ul li a {
+    color: #e9ecef;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+}
+
+#footer .footer-top .footer-links ul li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer .footer-top .footer-newsletter h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    background: none;
+    text-decoration: none;
+}
+
+#footer .footer-top .footer-newsletter p {
+    color: #e9ecef;
+    margin-bottom: 15px;
+}
+
+#footer .footer-top .social-links a {
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    background: #495057;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 12px;
+    margin-right: 6px;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 120px;
+    height: 32px;
+    transition: 0.3s;
+    text-decoration: none;
+    justify-content: center;
+}
+
+#footer .footer-top .social-links a img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    border-radius: 50%;
+}
+
+#footer .footer-top .social-links a span {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#footer .footer-top .social-links a:hover {
+    background: #006e7d;
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer .footer-top .footer-external-link {
+    margin-top: 15px;
+}
+
+#footer .footer-top .footer-external-link .external-link {
+    color: #e9ecef;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+#footer .footer-top .footer-external-link .external-link:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer .footer-top .footer-legal-links {
+    margin-top: 10px;
+}
+
+#footer .footer-top .footer-legal-links .legal-link {
+    color: #e9ecef;
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    padding: 8px 12px;
+    background: #495057;
+    border-radius: 20px;
+    transition: all 0.3s;
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#footer .footer-top .footer-legal-links .legal-link:hover {
+    color: #fff;
+    background: #006e7d;
+    text-decoration: none;
+}
+
+#footer .footer-copyright {
+    background: #495057;
+    padding: 12px 0;
+    text-align: center;
+}
+
+#footer .footer-copyright .copyright {
+    color: #e9ecef;
+    font-size: 14px;
+}
+
+#footer .footer-copyright .copyright strong {
+    color: #fff;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    #footer .footer-top {
+        padding: 40px 0 20px 0;
+    }
+    
+    #footer .footer-top .footer-contact h5 {
+        font-size: 20px;
+    }
+    
+    #footer .footer-top .footer-links h4,
+    #footer .footer-top .footer-newsletter h4 {
+        font-size: 15px;
+    }
+    
+    #footer .footer-top .social-links {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    #footer .footer-copyright {
+        text-align: center;
+    }
+}
+
+/* Terms and Conditions Page Styles */
+.terms-container {
+    background: #f8f9fa;
+    min-height: calc(100vh - 200px);
+    padding: 40px 0;
+}
+
+.terms-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #006e7d 0%, #004d5a 100%);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 110, 125, 0.2);
+}
+
+.terms-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.last-updated {
+    font-size: 1.1rem;
+    color: #e9ecef;
+    margin: 0;
+    font-style: italic;
+}
+
+.terms-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.terms-section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.terms-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.terms-section h2 {
+    color: #006e7d;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #006e7d;
+}
+
+.terms-section h3 {
+    color: #495057;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 25px 0 15px 0;
+}
+
+.terms-section p {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.terms-section ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.terms-section li {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.contact-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #006e7d;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-info a {
+    color: #006e7d;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    color: #004d5a;
+    text-decoration: underline;
+}
+
+/* Responsive Design for Terms Page */
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 20px 0;
+    }
+    
+    .terms-header {
+        margin-bottom: 30px;
+        padding: 30px 20px;
+    }
+    
+    .terms-header h1 {
+        font-size: 2rem;
+    }
+    
+    .terms-content {
+        padding: 20px;
+        margin: 0 15px;
+    }
+    
+    .terms-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .terms-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* More Button Styles */
+.more-button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.more-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #006e7d 0%, #004d5a 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 110, 125, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.more-button:hover {
+    background: linear-gradient(135deg, #004d5a 0%, #003a45 100%);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 110, 125, 0.4);
+}
+
+.more-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 110, 125, 0.3);
+}
+
+/* Banking Cards Section */
+.banking-cards-section {
+    background: #f8f9fa;
+    padding: 50px 0;
+    margin: 30px 0;
+}
+
+.banking-cards-section .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.banking-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.banking-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.banking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #006e7d;
+    color: #333;
+    text-decoration: none;
+}
+
+.banking-logo {
+    margin-bottom: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banking-logo-img {
+    max-width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.banking-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.banking-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive Design for Banking Cards */
+@media (max-width: 768px) {
+    .banking-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .banking-cards-section {
+        padding: 30px 0;
+    }
+    
+    .banking-cards-section .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+}
