@@ -532,14 +532,7 @@ nav {
     padding-left: 16px;
 }
 
-.section-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #2c3e50;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+/* Old section-title removed - using new centered version below */
 
 /* Header with Search Layout */
 .header-with-search {
@@ -970,10 +963,13 @@ nav {
 
 /* Main institutions grid for homepage */
 .main-institutions {
+    margin: 40px 0;
+}
+
+.main-institutions-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin: 40px 0;
 }
 
 .main-institution-card {
@@ -1048,7 +1044,7 @@ nav {
 
 /* Responsive design for hero section */
 @media (max-width: 1200px) {
-    .main-institutions {
+    .main-institutions-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
@@ -1132,7 +1128,7 @@ nav {
         font-size: 2rem;
     }
     
-    .main-institutions {
+    .main-institutions-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -1417,9 +1413,7 @@ nav {
         font-size: 24px;
     }
     
-    .section-title {
-        font-size: 20px;
-    }
+    /* Old section-title responsive styling removed - using new centered version */
     
     .institution-card {
         padding: 20px;
@@ -1890,13 +1884,7 @@ nav {
     margin: 30px 0;
 }
 
-.banking-cards-section .section-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 40px;
-}
+/* Banking section title styling moved to main section-title class */
 
 .banking-cards {
     display: grid;
@@ -1963,10 +1951,7 @@ nav {
         padding: 30px 0;
     }
     
-    .banking-cards-section .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-    }
+    /* Banking section title responsive styling handled by main section-title class */
 }
 
 /* Service blocks styling */
@@ -2056,6 +2041,133 @@ nav {
 @media (min-width: 1025px) {
     .service-blocks-container {
         grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #1e3c72;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* Main Institutions Section */
+.main-institutions .section-title {
+    margin-bottom: 30px;
+}
+
+/* Banking Cards Section */
+.banking-cards-section .section-title {
+    margin-bottom: 30px;
+}
+
+/* Main Useful Links Section */
+.useful-links-section {
+    padding: 40px 0;
+    background: #f8f9fa;
+}
+
+.useful-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.useful-link-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e0e0e0;
+}
+
+.useful-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: inherit;
+}
+
+.useful-link-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+}
+
+.useful-link-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.useful-link-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e3c72;
+    margin-bottom: 8px;
+}
+
+.useful-link-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .useful-links-section {
+        padding: 30px 0;
+    }
+    
+    .useful-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .useful-link-card {
+        padding: 20px 15px;
+    }
+    
+    .useful-link-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+    
+    .useful-link-img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .useful-link-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .useful-links-grid {
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 }
