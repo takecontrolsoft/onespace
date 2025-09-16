@@ -388,3 +388,49 @@ function filterMinistries() {
         }
     }
 }
+
+// Search functionality for useful links
+function filterUsefulLinks() {
+    const searchInput = document.getElementById('usefulSearchInput');
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    const serviceBlocks = document.querySelectorAll('.service-block');
+    const regularLinks = document.querySelectorAll('.link-list > a:not(.service-block a)');
+    
+    // Filter service blocks
+    serviceBlocks.forEach(block => {
+        const titleElement = block.querySelector('.service-content a');
+        const descriptionElement = block.querySelector('.service-content p');
+        
+        if (titleElement && descriptionElement) {
+            const titleText = titleElement.textContent.toLowerCase();
+            const descriptionText = descriptionElement.textContent.toLowerCase();
+            const searchText = titleText + ' ' + descriptionText;
+            
+            if (searchText.includes(searchTerm)) {
+                block.style.display = 'flex';
+            } else {
+                block.style.display = 'none';
+            }
+        }
+    });
+    
+    // Filter regular links
+    regularLinks.forEach(link => {
+        const linkText = link.textContent.toLowerCase();
+        
+        if (linkText.includes(searchTerm)) {
+            link.style.display = 'block';
+        } else {
+            link.style.display = 'none';
+        }
+    });
+    
+    // Show/hide service blocks container based on visible blocks
+    const serviceBlocksContainer = document.querySelector('.service-blocks-container');
+    if (serviceBlocksContainer) {
+        const visibleBlocks = serviceBlocksContainer.querySelectorAll('.service-block[style*="flex"], .service-block:not([style*="none"])');
+        serviceBlocksContainer.style.display = visibleBlocks.length > 0 ? 'grid' : 'none';
+    }
+}
+
