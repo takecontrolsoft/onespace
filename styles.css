@@ -404,7 +404,13 @@ nav {
     padding: 8px;
     opacity: 0.8;
 }
-
+/* Стил за логото на ИС Бизнес цикли */
+.main-institution-card[href*="portal-isbc.nsi.bg"] .main-institution-logo {
+    background: #1f618d;
+    border-radius: 12px;
+    padding: 8px;
+    opacity: 0.8;
+}
 
 .bank-logo {
     width: 60px;
