@@ -6,7 +6,6 @@ const urlsToCache = [
   '/banks.html',
   '/ministries.html',
   '/useful.html',
-  '/calendar.html',
   '/styles.css',
   '/script.js',
   '/images/onespace-logo.png',
