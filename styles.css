@@ -2416,3 +2416,81 @@ nav {
     opacity: 0.8;
 }
 
+/* PWA Install Button Styles - 3D Effect */
+.pwa-install-btn {
+    background: linear-gradient(145deg, #9DD3CC, #7BB3AC) !important;
+    color: white !important;
+    border: none !important;
+    border-top: 2px solid #A8D8D1 !important;
+    border-left: 2px solid #A8D8D1 !important;
+    border-right: 2px solid #6BA39C !important;
+    border-bottom: 2px solid #6BA39C !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: none !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    position: relative !important;
+}
+
+.pwa-install-btn:hover {
+    background: linear-gradient(145deg, #7BB3AC, #6BA39C) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        0 3px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
+    border-top-color: #9DD3CC !important;
+    border-left-color: #9DD3CC !important;
+    border-right-color: #5B938C !important;
+    border-bottom-color: #5B938C !important;
+}
+
+.pwa-install-btn:active {
+    transform: translateY(1px) !important;
+    background: linear-gradient(145deg, #6BA39C, #5B938C) !important;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+    border-top-color: #5B938C !important;
+    border-left-color: #5B938C !important;
+    border-right-color: #6BA39C !important;
+    border-bottom-color: #6BA39C !important;
+}
+
+.install-icon {
+    font-size: 16px !important;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3)) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.install-text {
+    font-size: 14px !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+    .pwa-install-btn {
+        padding: 10px 16px !important;
+        font-size: 13px !important;
+    }
+    
+    .install-text {
+        font-size: 13px !important;
+    }
+}
+

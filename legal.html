@@ -10,6 +10,16 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#006e7d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OneSpace">
+    <link rel="apple-touch-icon" href="images/onespace-logo.png">
+    <meta name="msapplication-TileColor" content="#006e7d">
+    <meta name="msapplication-TileImage" content="images/onespace-logo.png">
+    
     <!-- SEO Meta Tags -->
     <title>Закони и правни актове - Единен портал за счетоводители<</title>
     <meta name="description" content="Български закони и наредби - данъчни, трудови, търговски и други правни актове. Бърз достъп до официални текстове на законите.">
@@ -52,30 +62,10 @@
                     <p class="subtitle">Закони и правни актове</p>
                 </div>
                 <div class="header-download">
-                    <div class="download-dropdown">
-                        <button class="download-btn" onclick="toggleDownloadDropdown()">
-                            <span class="download-icon">💻</span>
-                            <span class="download-text">Изтеглете</span>
-                            <span class="download-arrow">▼</span>
-                        </button>
-                        <div class="download-menu" id="downloadMenu">
-                            <div class="download-section">
-                                <h4>Windows</h4>
-                                <a href="../install/OneSpace.exe" class="download-link" download>
-                                    OneSpace.exe (64-bit)
-                                </a>
-                                <a href="../install/OneSpace(x86).exe" class="download-link" download>
-                                    OneSpace.exe (32-bit)
-                                </a>
-                            </div>
-                            <div class="download-section">
-                                <h4>macOS</h4>
-                                <a href="../install/OneSpace.app" class="download-link" download>
-                                    OneSpace.app
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    <button id="pwa-install-btn" class="pwa-install-btn" style="display: none;">
+                        <span class="install-icon">💻</span>
+                        <span class="install-text">Инсталирай</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -435,12 +425,76 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <!-- Cronitor RUM -->
-    <script async src="https://rum.cronitor.io/script.js"></script>
-    <script>
-        window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
-        cronitor('config', { clientKey: 'a3846c9cddc76c88722a1dddb62c1006' });
-    </script>
+<script src="script.js"></script>
+<!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: 'a3846c9cddc76c88722a1dddb62c1006' });
+</script>
+
+<!-- PWA Service Worker Registration -->
+<script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('pwa-install-btn');
+    
+    console.log('PWA Install script loaded');
+    console.log('Install button found:', installBtn);
+    
+    // Show install button when PWA can be installed
+    window.addEventListener('beforeinstallprompt', (e) => {
+        console.log('beforeinstallprompt event fired');
+        e.preventDefault();
+        deferredPrompt = e;
+        installBtn.style.display = 'flex';
+        console.log('Install button should now be visible');
+    });
+    
+    // Handle install button click
+    installBtn.addEventListener('click', async () => {
+        console.log('Install button clicked');
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`User response to the install prompt: ${outcome}`);
+            deferredPrompt = null;
+            installBtn.style.display = 'none';
+        }
+    });
+    
+    // Hide install button after successful installation
+    window.addEventListener('appinstalled', () => {
+        console.log('PWA was installed');
+        installBtn.style.display = 'none';
+    });
+    
+    // Debug: Check if PWA is already installed
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        console.log('PWA is already installed');
+    }
+    
+    // Debug: Show button after 3 seconds for testing
+    setTimeout(() => {
+        if (installBtn.style.display === 'none') {
+            console.log('PWA install prompt not triggered, showing button for testing');
+            installBtn.style.display = 'flex';
+        }
+    }, 3000);
+    
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('SW registered: ', registration);
+                })
+                .catch((registrationError) => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+        });
+    } else {
+        console.log('Service Worker not supported');
+    }
+</script>
 </body>
 </html>
