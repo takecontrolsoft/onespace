@@ -45,25 +45,26 @@ function checkLinks() {
 
 // Функция за мобилно меню
 function toggleMobileMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggleButton = document.getElementById('mobileToggleBtn');
     
     if (mobileMenu && toggleButton) {
-        mobileMenu.classList.toggle('active');
+        const isActive = mobileMenu.classList.contains('active');
         
-        // Промяна на иконата
-        if (mobileMenu.classList.contains('active')) {
-            toggleButton.innerHTML = '✕';
-        } else {
+        if (isActive) {
+            mobileMenu.classList.remove('active');
             toggleButton.innerHTML = '☰';
+        } else {
+            mobileMenu.classList.add('active');
+            toggleButton.innerHTML = '✕';
         }
     }
 }
 
 // Затваряне на мобилното меню при клик извън него
 function closeMobileMenu() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggleButton = document.getElementById('mobileToggleBtn');
     
     if (mobileMenu && mobileMenu.classList.contains('active')) {
         mobileMenu.classList.remove('active');
@@ -119,15 +120,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     // Добавяме event listener за мобилното меню
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
+    const toggleButton = document.getElementById('mobileToggleBtn');
     if (toggleButton) {
-        toggleButton.addEventListener('click', toggleMobileMenu);
+        // Премахваме стария event listener ако има такъв
+        toggleButton.removeEventListener('click', toggleMobileMenu);
+        // Добавяме новия
+        toggleButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
     }
     
     // Затваряне на мобилното меню при клик извън него
     document.addEventListener('click', function(e) {
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const toggleButton = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const toggleButton = document.getElementById('mobileToggleBtn');
         
         if (mobileMenu && toggleButton && 
             !mobileMenu.contains(e.target) && 

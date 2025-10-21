@@ -43,7 +43,7 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#1e3c72">
     
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=menu-visible">
 <style>
     .calendar-container {
         max-width: 1200px;
@@ -525,7 +525,7 @@
 <nav>
     <div class="container">
         <div class="nav-container">
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-toggle" id="mobileToggleBtn">☰</button>
             <ul class="nav-tabs">
                 <li><a href="index.html" class="nav-tab">Начало</a></li>
                 <li><a href="institutions.html" class="nav-tab">Институции</a></li>
@@ -536,7 +536,7 @@
                 <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
             </ul>
         </div>
-        <div class="mobile-menu">
+        <div class="mobile-menu" id="mobileMenu">
             <ul class="mobile-nav-tabs">
                 <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
                 <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
@@ -645,7 +645,7 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+    <script src="script.js?v=clean-final"></script>
 <script src="calendar.js"></script>
 <!-- Cronitor RUM -->
 <script async src="https://rum.cronitor.io/script.js"></script>

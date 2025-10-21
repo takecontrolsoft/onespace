@@ -50,7 +50,7 @@
     <meta name="msapplication-TileColor" content="#1e3c72">
     <meta name="msapplication-TileImage" content="favicon-32x32.png">
     
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=menu-visible">
 </head>
 <body>
 <header>
@@ -74,7 +74,7 @@
 <nav>
     <div class="container">
         <div class="nav-container">
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-toggle" id="mobileToggleBtn">☰</button>
             <ul class="nav-tabs">
                 <li><a href="index.html" class="nav-tab active">Начало</a></li>
             <li><a href="institutions.html" class="nav-tab">Институции</a></li>
@@ -85,7 +85,7 @@
             <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
             </ul>
         </div>
-        <div class="mobile-menu">
+        <div class="mobile-menu" id="mobileMenu">
             <ul class="mobile-nav-tabs">
                 <li><a href="index.html" class="mobile-nav-tab active">Начало</a></li>
                 <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
@@ -407,7 +407,7 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
+    <script src="script.js?v=clean-final"></script>
 <!-- Cronitor RUM -->
 <script async src="https://rum.cronitor.io/script.js"></script>
 <script>
@@ -420,25 +420,18 @@
     let deferredPrompt;
     const installBtn = document.getElementById('pwa-install-btn');
     
-    console.log('PWA Install script loaded');
-    console.log('Install button found:', installBtn);
-    
     // Show install button when PWA can be installed
     window.addEventListener('beforeinstallprompt', (e) => {
-        console.log('beforeinstallprompt event fired');
         e.preventDefault();
         deferredPrompt = e;
         installBtn.style.display = 'flex';
-        console.log('Install button should now be visible');
     });
     
     // Handle install button click
     installBtn.addEventListener('click', async () => {
-        console.log('Install button clicked');
         if (deferredPrompt) {
             deferredPrompt.prompt();
             const { outcome } = await deferredPrompt.userChoice;
-            console.log(`User response to the install prompt: ${outcome}`);
             deferredPrompt = null;
             installBtn.style.display = 'none';
         }
@@ -446,36 +439,20 @@
     
     // Hide install button after successful installation
     window.addEventListener('appinstalled', () => {
-        console.log('PWA was installed');
         installBtn.style.display = 'none';
     });
-    
-    // Debug: Check if PWA is already installed
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        console.log('PWA is already installed');
-    }
-    
-    // Debug: Show button after 3 seconds for testing
-    setTimeout(() => {
-        if (installBtn.style.display === 'none') {
-            console.log('PWA install prompt not triggered, showing button for testing');
-            installBtn.style.display = 'flex';
-        }
-    }, 3000);
     
     // Service Worker Registration
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js')
                 .then((registration) => {
-                    console.log('SW registered: ', registration);
+                    // Service worker registered successfully
                 })
                 .catch((registrationError) => {
-                    console.log('SW registration failed: ', registrationError);
+                    // Service worker registration failed
                 });
         });
-    } else {
-        console.log('Service Worker not supported');
     }
 </script>
 
