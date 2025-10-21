@@ -46,6 +46,32 @@
                 <h1>Единен портал за счетоводители</h1>
                 <p class="subtitle">Институции и услуги</p>
             </div>
+            <div class="header-download">
+                <div class="download-dropdown">
+                    <button class="download-btn" onclick="toggleDownloadDropdown()">
+                        <span class="download-icon">💻</span>
+                        <span class="download-text">Изтеглете</span>
+                        <span class="download-arrow">▼</span>
+                    </button>
+                    <div class="download-menu" id="downloadMenu">
+                        <div class="download-section">
+                            <h4>Windows</h4>
+                            <a href="~/install/OneSpace.exe" class="download-link" download>
+                                OneSpace.exe (64-bit)
+                            </a>
+                            <a href="~/install/OneSpace(x86).exe" class="download-link" download>
+                                OneSpace.exe (32-bit)
+                            </a>
+                        </div>
+                        <div class="download-section">
+                            <h4>macOS</h4>
+                            <a href="~/install/OneSpace.app" class="download-link" download>
+                                OneSpace.app
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -58,6 +84,7 @@
                 <li><a href="index.html" class="nav-tab">Начало</a></li>
                 <li><a href="institutions.html" class="nav-tab active">Институции</a></li>
                 <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+                <li><a href="legal.html" class="nav-tab">Закони</a></li>
                 <li><a href="calendar.html" class="nav-tab">Календар</a></li>
                 <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
                 <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
@@ -68,6 +95,7 @@
                 <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
                 <li><a href="institutions.html" class="mobile-nav-tab active">Институции</a></li>
                 <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                <li><a href="legal.html" class="mobile-nav-tab">Закони</a></li>
                 <li><a href="calendar.html" class="mobile-nav-tab">Календар</a></li>
                 <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
                 <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
@@ -208,6 +236,16 @@
                 <h3 class="main-institution-title">МВР Е-услуги</h3>
                 <p class="main-institution-description">Електронни услуги на МВР</p>
             </a>
+
+            <!-- НАП Регистър за писмени запитвания -->
+            <a href="https://nraapp02.nra.bg/cms5/" class="main-institution-card" data-search="нап регистър писмени запитвания търсене цу" target="_blank">
+                <div class="main-institution-logo">
+                    <img src="images/nra-logo.png" alt="НАП Регистър" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none;">📝</span>
+                </div>
+                <h3 class="main-institution-title">ЦУ на НАП</h3>
+                <p class="main-institution-description">Регистър за писмени запитвания - търсене</p>
+            </a>           
             </div>
         </div>
     </div>

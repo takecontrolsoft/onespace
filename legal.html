@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="cross-origin">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="cross-origin">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    
+    <!-- SEO Meta Tags -->
+    <title>Закони и правни актове - Единен портал за счетоводители<</title>
+    <meta name="description" content="Български закони и наредби - данъчни, трудови, търговски и други правни актове. Бърз достъп до официални текстове на законите.">
+    <meta name="keywords" content="български закони, данъчни закони, трудово право, търговско право, счетоводство, правни актове, България">
+    <meta name="author" content="OneSpace">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onespace.bg/legal.html">
+    <meta property="og:title" content="Закони и правни актове - OneSpace Portal">
+    <meta property="og:description" content="Български закони и наредби - данъчни, трудови, търговски и други правни актове. Бърз достъп до официални текстове на законите.">
+    <meta property="og:image" content="https://onespace.bg/images/onespace-portal-view.png?v=2">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="OneSpace Portal">
+    <meta property="og:locale" content="bg_BG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://onespace.bg/legal.html">
+    <meta property="twitter:title" content="Закони и правни актове - OneSpace Portal">
+    <meta property="twitter:description" content="Български закони и наредби - данъчни, трудови, търговски и други правни актове. Бърз достъп до официални текстове на законите.">
+    <meta property="twitter:image" content="https://onespace.bg/images/onespace-portal-view.png?v=2">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3c72">
+    <meta name="msapplication-TileColor" content="#1e3c72">
+    <meta name="msapplication-TileImage" content="favicon-32x32.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="images/onespace-logo.png" alt="OneSpace Logo" class="site-logo">
+                <div class="header-text">
+                    <h1>Единен портал за счетоводители</h1>
+                    <p class="subtitle">Закони и правни актове</p>
+                </div>
+                <div class="header-download">
+                    <div class="download-dropdown">
+                        <button class="download-btn" onclick="toggleDownloadDropdown()">
+                            <span class="download-icon">💻</span>
+                            <span class="download-text">Изтеглете</span>
+                            <span class="download-arrow">▼</span>
+                        </button>
+                        <div class="download-menu" id="downloadMenu">
+                            <div class="download-section">
+                                <h4>Windows</h4>
+                                <a href="../install/OneSpace.exe" class="download-link" download>
+                                    OneSpace.exe (64-bit)
+                                </a>
+                                <a href="../install/OneSpace(x86).exe" class="download-link" download>
+                                    OneSpace.exe (32-bit)
+                                </a>
+                            </div>
+                            <div class="download-section">
+                                <h4>macOS</h4>
+                                <a href="../install/OneSpace.app" class="download-link" download>
+                                    OneSpace.app
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+                <ul class="nav-tabs">
+                    <li><a href="index.html" class="nav-tab">Начало</a></li>
+                    <li><a href="institutions.html" class="nav-tab">Институции</a></li>
+                    <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+                    <li><a href="legal.html" class="nav-tab active">Закони</a></li>
+                    <li><a href="calendar.html" class="nav-tab">Календар</a></li>
+                    <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
+                    <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu">
+                <ul class="mobile-nav-tabs">
+                    <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
+                    <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
+                    <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                    <li><a href="legal.html" class="mobile-nav-tab active">Закони</a></li>
+                    <li><a href="calendar.html" class="mobile-nav-tab">Календар</a></li>
+                    <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
+                    <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="content-section">
+            <div class="header-with-back">
+                <a href="index.html" class="back-link">←</a>
+                <h2 class="section-title">Закони, наредби и правни актове</h2>
+            </div>
+            <div class="header-with-search">
+                <div class="search-box">
+                    <input type="text" placeholder="Търсене в закони и наредби..." onkeyup="filterLegalLinks(this.value)">
+                </div>
+            </div>
+
+            <div class="legal-sections">
+                <section class="legal-section">
+                    <h2>Данъчни и осигурителни закони</h2>
+                    <div class="legal-links">
+                        <a href="https://www.lex.bg/laws/ldoc/2135533201" class="legal-link" target="_blank" rel="noopener" data-search="зддс закон данък добавена стойност">
+                            <span class="legal-icon">📊</span>
+                            <span class="legal-text">ЗДДС - Закон за данък добавена стойност</span>
+                        </a>
+                        <a href="https://www.lex.bg/laws/ldoc/2135538631" class="legal-link" target="_blank" rel="noopener" data-search="зддфл закон данък доходи физически лица">
+                            <span class="legal-icon">💰</span>
+                            <span class="legal-text">ЗДДФЛ - Закон за данъка върху доходите на физическите лица</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135540562" class="legal-link" target="_blank" rel="noopener" data-search="зкпо закон корпоративно подоходно облагане">
+                            <span class="legal-icon">🏢</span>
+                            <span class="legal-text">ЗКПО - Закон за корпоративното подоходно облагане</span>
+                        </a>
+                        <a href="https://lex.bg/bg/laws/ldoc/2135534826" class="legal-link" target="_blank" rel="noopener" data-search="пзддс правилник прилагане зддс">
+                            <span class="legal-icon">📋</span>
+                            <span class="legal-text">ПЗДДС - Правилник за прилагане на ЗДДС</span>
+                        </a>
+                        <a href="https://www.lex.bg/laws/ldoc/1597824512" class="legal-link" target="_blank" rel="noopener" data-search="ксо кодекс социално осигуряване">
+                            <span class="legal-icon">🛡️</span>
+                            <span class="legal-text">КСО - Кодекс на социалното осигуряване</span>
+                        </a>
+                        <a href="https://www.lex.bg/laws/ldoc/2134412800" class="legal-link" target="_blank" rel="noopener" data-search="закон здравно осигуряване">
+                            <span class="legal-icon">🏥</span>
+                            <span class="legal-text">Закон за здравното осигуряване</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Трудово законодателство</h2>
+                    <div class="legal-links">
+                        <a href="https://www.lex.bg/laws/ldoc/1594373121" class="legal-link" target="_blank" rel="noopener" data-search="кодекс труда трудово право">
+                            <span class="legal-icon">⚖️</span>
+                            <span class="legal-text">Кодекс на труда</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135468610" class="legal-link" target="_blank" rel="noopener" data-search="закон насърчаване заетост">
+                            <span class="legal-icon">💼</span>
+                            <span class="legal-text">Закон за насърчаване на заетостта</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/-551266300" class="legal-link" target="_blank" rel="noopener" data-search="наредба документи трудов договор">
+                            <span class="legal-icon">📄</span>
+                            <span class="legal-text">Наредба № 4 за документите при трудов договор</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/-551236607" class="legal-link" target="_blank" rel="noopener" data-search="наредба трудов стаж">
+                            <span class="legal-icon">⏰</span>
+                            <span class="legal-text">Наредба за трудовия стаж</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135485996" class="legal-link" target="_blank" rel="noopener" data-search="наредба служебни командировки">
+                            <span class="legal-icon">✈️</span>
+                            <span class="legal-text">Наредба за служебните командировки</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Безработица и заетост</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/-548919295" class="legal-link" target="_blank" rel="noopener" data-search="наредба обезщетения безработица">
+                            <span class="legal-icon">💼</span>
+                            <span class="legal-text">Наредба за обезщетенията за безработица</span>
+                        </a>
+                        <a href="https://www.gli.government.bg/sites/default/files/upload/documents/2025-07/НАРЕДБА%20ЗА%20ВПИСВАНЕ%20В%20РЕГИСТЪРА%20НА%20ЗАЕТОСТТА.pdf" class="legal-link" target="_blank" rel="noopener" data-search="наредба вписване регистър заетост">
+                            <span class="legal-icon">📄</span>
+                            <span class="legal-text">Наредба за вписване в регистъра на заетостта</span>
+                        </a>
+                        <a href="https://nra.bg/wps/portal/nra/osiguryavane/Registur_na_zaetostta/vuprosi-i-otgovori-za-registura-na-zaetostta/vuprosi-i-otgovori-za-registura-na-zaetostta" class="legal-link" target="_blank" rel="noopener" data-search="регистър заетост">
+                            <span class="legal-icon">💼</span>
+                            <span class="legal-text">Регистър на заетостта</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Търговско право и регистри</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/-14917630" class="legal-link" target="_blank" rel="noopener" data-search="търговски закон">
+                            <span class="legal-icon">🏪</span>
+                            <span class="legal-text">Търговски закон</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135522741" class="legal-link" target="_blank" rel="noopener" data-search="закон търговски регистър">
+                            <span class="legal-icon">📊</span>
+                            <span class="legal-text">Закон за Търговския регистър</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135503074" class="legal-link" target="_blank" rel="noopener" data-search="закон регистър булстат">
+                            <span class="legal-icon">🏛️</span>
+                            <span class="legal-text">Закон за регистъра по булстат</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135540036" class="legal-link" target="_blank" rel="noopener" data-search="закон патентни възлагания">
+                            <span class="legal-icon">💡</span>
+                            <span class="legal-text">Закон за патентните възлагания</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Счетоводство и финанси</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2136697598" class="legal-link" target="_blank" rel="noopener" data-search="закон счетоводство">
+                            <span class="legal-icon">📚</span>
+                            <span class="legal-text">Закон за счетоводството</span>
+                        </a>
+                        <a href="https://lex.bg/bg/laws/ldoc/2137182924" class="legal-link" target="_blank" rel="noopener" data-search="змип закон мерки защита икономика">
+                            <span class="legal-icon">📊</span>
+                            <span class="legal-text">ЗМИП - Закон за мерките за защита на икономиката</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135540645" class="legal-link" target="_blank" rel="noopener" data-search="наредба н-18">
+                            <span class="legal-icon">📋</span>
+                            <span class="legal-text">Наредба н-18</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/-549037567" class="legal-link" target="_blank" rel="noopener" data-search="наредба годишни финансови отчети">
+                            <span class="legal-icon">💼</span>
+                            <span class="legal-text">Наредба за годишните финансови отчети</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/-549037567" class="legal-link" target="_blank" rel="noopener" data-search="наредба консолидирани финансови отчети">
+                            <span class="legal-icon">📄</span>
+                            <span class="legal-text">Наредба за консолидираните финансови отчети</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Публични поръчки</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон публични поръчки">
+                            <span class="legal-icon">📋</span>
+                            <span class="legal-text">Закон за публичните поръчки</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон договори публични поръчки">
+                            <span class="legal-icon">📝</span>
+                            <span class="legal-text">Закон за договорите в сферата на публичните поръчки</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон концесии">
+                            <span class="legal-icon">🤝</span>
+                            <span class="legal-text">Закон за концесиите</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Околна среда и енергетика</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон околна среда">
+                            <span class="legal-icon">🌊</span>
+                            <span class="legal-text">Закон за околната среда</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон енергетика">
+                            <span class="legal-icon">⚡</span>
+                            <span class="legal-text">Закон за енергетиката</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон възобновяеми енергийни източници">
+                            <span class="legal-icon">🌱</span>
+                            <span class="legal-text">Закон за възобновяемите енергийни източници</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Банково и финансово право</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон кредитни институции">
+                            <span class="legal-icon">🏦</span>
+                            <span class="legal-text">Закон за кредитните институции</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон българска народна банка">
+                            <span class="legal-icon">🏛️</span>
+                            <span class="legal-text">Закон за Българската народна банка</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон плащания">
+                            <span class="legal-icon">💳</span>
+                            <span class="legal-text">Закон за плащанията и плащателните системи</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон парично обращение">
+                            <span class="legal-icon">💰</span>
+                            <span class="legal-text">Закон за паричното обращение</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Застраховане</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон застраховане">
+                            <span class="legal-icon">🛡️</span>
+                            <span class="legal-text">Закон за застраховането</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон застрахователен надзор">
+                            <span class="legal-icon">👁️</span>
+                            <span class="legal-text">Закон за застрахователния надзор</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон задължително застраховане">
+                            <span class="legal-icon">🔒</span>
+                            <span class="legal-text">Закон за задължителното застраховане</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Информационни технологии</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон електронно управление">
+                            <span class="legal-icon">💻</span>
+                            <span class="legal-text">Закон за електронното управление</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон електронна идентификация">
+                            <span class="legal-icon">🆔</span>
+                            <span class="legal-text">Закон за електронната идентификация</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон защита лични данни">
+                            <span class="legal-icon">🔐</span>
+                            <span class="legal-text">Закон за защита на личните данни</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон киберсигурност">
+                            <span class="legal-icon">🔒</span>
+                            <span class="legal-text">Закон за киберсигурността</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Митници и акцизи</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон митници">
+                            <span class="legal-icon">🏛️</span>
+                            <span class="legal-text">Закон за митниците</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон акцизи">
+                            <span class="legal-icon">📦</span>
+                            <span class="legal-text">Закон за акцизите и данъчните складове</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон държавна агенция митници">
+                            <span class="legal-icon">🏢</span>
+                            <span class="legal-text">Закон за Държавната агенция "Митници"</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Административно право</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="административно процедурно право">
+                            <span class="legal-icon">📋</span>
+                            <span class="legal-text">Административно-процедурно право</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон административни нарушения">
+                            <span class="legal-icon">⚠️</span>
+                            <span class="legal-text">Закон за административните нарушения и наказания</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135532800" class="legal-link" target="_blank" rel="noopener" data-search="закон държавна администрация">
+                            <span class="legal-icon">🏛️</span>
+                            <span class="legal-text">Закон за държавната администрация</span>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>Други</h2>
+                    <div class="legal-links">
+                        <a href="https://lex.bg/laws/ldoc/-549442559" class="legal-link" target="_blank" rel="noopener" data-search="наредба обществено осигуряване самоосигуряващи се лица">
+                            <span class="legal-icon">👥</span>
+                            <span class="legal-text">Наредбата за общественото осигуряване на самоосигуряващите се лица, българските граждани на работа в чужбина и морските лица</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2135621100" class="legal-link" target="_blank" rel="noopener" data-search="наредба дейност заложни къщи">
+                            <span class="legal-icon">🏠</span>
+                            <span class="legal-text">Наредба за дейността на заложните къщи</span>
+                        </a>
+                        <a href="https://lex.bg/laws/ldoc/2134942720" class="legal-link" target="_blank" rel="noopener" data-search="закон юридически лица нестопанска цел">
+                            <span class="legal-icon">🏢</span>
+                            <span class="legal-text">ЗАКОН ЗА ЮРИДИЧЕСКИТЕ ЛИЦА С НЕСТОПАНСКА ЦЕЛ</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row" itemscope="" itemprop="organization" itemtype="https://schema.org/Organization">
+                    <div class="col-lg-4 col-md-4 footer-contact">
+                        <h5>OneSpace</h5>
+                        <h6><a href="https://products.takecontrolsoft.eu/" target="_blank">Take Control - Software & Infrastructure</a></h6>
+                        <hidden value="OneSpace - Take Control - Software & Infrastructure" itemprop="name"></hidden>
+                    </div>
+                    <div class="col-lg-4 col-md-4 footer-links">
+                        <h4>Връзки</h4>
+                        <div class="footer-legal-links">
+                            <a href="terms-and-conditions.html" target="_blank" class="legal-link">Общи условия</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 footer-newsletter">
+                        <h4>Социални мрежи</h4>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/groups/3928521854093625" target="_blank" class="social-link facebook" title="Иновации в счетоводството">
+                                <img src="images/fb.jpeg" alt="Facebook" style="width: 16px; height: 16px;">
+                                <span>Иновации в счетоводството</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-lg-flex footer-copyright py-4">
+            <div class="me-lg-auto text-center text-lg-start">
+                <div class="copyright">
+                    © Copyright <strong><span>2025</span></strong>. Всички права запазени
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Cronitor RUM -->
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+        window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+        cronitor('config', { clientKey: 'a3846c9cddc76c88722a1dddb62c1006' });
+    </script>
+</body>
+</html>

@@ -15,6 +15,23 @@ function filterInstitutions(searchTerm) {
     });
 }
 
+// Функция за търсене в правни линкове
+function filterLegalLinks(searchTerm) {
+    const normalizedSearchTerm = searchTerm.toLowerCase().trim();
+    const legalLinks = document.querySelectorAll('.legal-link');
+
+    legalLinks.forEach(link => {
+        const dataSearch = link.getAttribute('data-search') || '';
+        const linkText = link.querySelector('.legal-text').textContent.toLowerCase();
+
+        if (linkText.includes(normalizedSearchTerm) || dataSearch.includes(normalizedSearchTerm)) {
+            link.style.display = 'flex';
+        } else {
+            link.style.display = 'none';
+        }
+    });
+}
+
 // Функция за проверка на връзките
 function checkLinks() {
     const links = document.querySelectorAll('a[href^="http"]');
@@ -56,6 +73,33 @@ function closeMobileMenu() {
     }
 }
 
+// Функция за показване/скриване на dropdown менюто за изтегляне
+function toggleDownloadDropdown() {
+    const dropdown = document.getElementById('downloadMenu');
+    const button = document.querySelector('.download-btn');
+    const arrow = document.querySelector('.download-arrow');
+    
+    if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+        arrow.innerHTML = '▼';
+    } else {
+        dropdown.classList.add('show');
+        arrow.innerHTML = '▲';
+    }
+}
+
+// Затваряне на dropdown при клик извън него
+function closeDownloadDropdown() {
+    const dropdown = document.getElementById('downloadMenu');
+    const button = document.querySelector('.download-btn');
+    const arrow = document.querySelector('.download-arrow');
+    
+    if (dropdown && dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+        arrow.innerHTML = '▼';
+    }
+}
+
 // Инициализация при зареждане на страницата
 document.addEventListener('DOMContentLoaded', function() {
     // Добавяме hover ефекти за картите
@@ -89,6 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
             !mobileMenu.contains(e.target) && 
             !toggleButton.contains(e.target)) {
             closeMobileMenu();
+        }
+        
+        // Затваряне на download dropdown при клик извън него
+        const downloadDropdown = document.querySelector('.download-dropdown');
+        if (downloadDropdown && !downloadDropdown.contains(e.target)) {
+            closeDownloadDropdown();
         }
     });
     

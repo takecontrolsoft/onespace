@@ -44,6 +44,32 @@
                 <h1>Единен портал за счетоводители</h1>
                 <p class="subtitle">Електронно банкиране и банкови услуги</p>
             </div>
+            <div class="header-download">
+                <div class="download-dropdown">
+                    <button class="download-btn" onclick="toggleDownloadDropdown()">
+                        <span class="download-icon">💻</span>
+                        <span class="download-text">Изтеглете</span>
+                        <span class="download-arrow">▼</span>
+                    </button>
+                    <div class="download-menu" id="downloadMenu">
+                        <div class="download-section">
+                            <h4>Windows</h4>
+                            <a href="~/install/OneSpace.exe" class="download-link" download>
+                                OneSpace.exe (64-bit)
+                            </a>
+                            <a href="~/install/OneSpace(x86).exe" class="download-link" download>
+                                OneSpace.exe (32-bit)
+                            </a>
+                        </div>
+                        <div class="download-section">
+                            <h4>macOS</h4>
+                            <a href="~/install/OneSpace.app" class="download-link" download>
+                                OneSpace.app
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -56,6 +82,7 @@
                 <li><a href="index.html" class="nav-tab">Начало</a></li>
                 <li><a href="institutions.html" class="nav-tab">Институции</a></li>
                 <li><a href="banks.html" class="nav-tab active">Банкиране</a></li>
+                <li><a href="legal.html" class="nav-tab">Закони</a></li>
                 <li><a href="calendar.html" class="nav-tab">Календар</a></li>
                 <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
                 <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
@@ -66,6 +93,7 @@
                 <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
                 <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
                 <li><a href="banks.html" class="mobile-nav-tab active">Банкиране</a></li>
+                <li><a href="legal.html" class="mobile-nav-tab">Закони</a></li>
                 <li><a href="calendar.html" class="mobile-nav-tab">Календар</a></li>
                 <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
                 <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
@@ -160,7 +188,14 @@
                 <div class="bank-name">Инвестбанк</div>
                 <a href="https://ibanking.ibank.bg/Default.aspx?ReturnUrl=%2f" class="bank-link" target="_blank">Investbank Online</a>
             </div>
-            
+            <div class="bank-card">
+                <div class="bank-logo">
+                    <img src="images/icard-business.png" alt="iCard" class="official-logo">
+                </div>
+                <div class="bank-name">iCard</div>
+                <a href="https://login.icard.com/#business" class="bank-link" target="_blank">Бизнес сметка</a>
+            </div>
+           
             <div class="bank-card featured" style="background: linear-gradient(135deg, #006e7d 0%, #004d56 100%);">
                 <div class="bank-logo">
                     <img src="images/bnb_logo.png" alt="БНБ" class="official-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">

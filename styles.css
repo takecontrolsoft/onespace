@@ -39,6 +39,112 @@ header {
     order: 2;
 }
 
+.header-download {
+    order: 3;
+    display: flex;
+    align-items: center;
+}
+
+.download-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.download-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.download-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.download-icon {
+    font-size: 16px;
+}
+
+.download-arrow {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.download-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e1e4e8;
+    min-width: 280px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    padding: 16px;
+}
+
+.download-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.download-section {
+    margin-bottom: 16px;
+}
+
+.download-section:last-child {
+    margin-bottom: 0;
+}
+
+.download-section h4 {
+    color: #1e3c72;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.download-link {
+    display: block;
+    padding: 8px 12px;
+    color: #495057;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+    border: 1px solid transparent;
+}
+
+.download-link:hover {
+    background: #f8f9fa;
+    color: #1e3c72;
+    border-color: #e1e4e8;
+    text-decoration: none;
+    transform: translateX(4px);
+}
+
+.download-link:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -55,6 +161,31 @@ header {
     .header-text {
         text-align: center;
         order: 2;
+    }
+    
+    .header-download {
+        order: 3;
+        justify-content: center;
+    }
+    
+    .download-menu {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        min-width: 260px;
+    }
+    
+    .download-menu.show {
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    .download-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .download-text {
+        display: none;
     }
 }
 
@@ -2176,5 +2307,98 @@ nav {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+}
+
+/* Legal Page Styles */
+.legal-sections {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.legal-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e1e4e8;
+}
+
+.legal-section h2 {
+    color: #006E7D;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #006E7D;
+}
+
+.legal-links {
+    display: grid;
+    gap: 1rem;
+}
+
+.legal-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.legal-link:hover {
+    background: #e3f2fd;
+    border-color: #006E7D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 110, 125, 0.15);
+}
+
+.legal-icon {
+    font-size: 1.5rem;
+    width: 2rem;
+    text-align: center;
+    filter: grayscale(100%) sepia(100%) hue-rotate(180deg) saturate(200%) brightness(0.8);
+    opacity: 0.8;
+}
+
+.legal-text {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Responsive Legal Page */
+@media (max-width: 768px) {
+    .legal-section {
+        padding: 1.5rem;
+    }
+
+    .legal-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .legal-link {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .legal-icon {
+        font-size: 1.25rem;
+        width: 1.5rem;
+    }
+
+    .legal-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Important Laws Icons Styling */
+.useful-link-icon span {
+    filter: grayscale(100%) sepia(100%) hue-rotate(180deg) saturate(200%) brightness(0.8);
+    opacity: 0.8;
 }
 

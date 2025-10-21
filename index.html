@@ -51,6 +51,32 @@
                 <h1>Единен портал за счетоводители</h1>
                 <p class="subtitle">Бърз достъп до държавни институции, банкови услуги и счетоводни инструменти</p>
             </div>
+            <div class="header-download">
+                <div class="download-dropdown">
+                    <button class="download-btn" onclick="toggleDownloadDropdown()">
+                        <span class="download-icon">💻</span>
+                        <span class="download-text">Изтеглете</span>
+                        <span class="download-arrow">▼</span>
+                    </button>
+                    <div class="download-menu" id="downloadMenu">
+                        <div class="download-section">
+                            <h4>Windows</h4>
+                            <a href="~/install/OneSpace.exe" class="download-link" download>
+                                OneSpace.exe (64-bit)
+                            </a>
+                            <a href="~/install/OneSpace(x86).exe" class="download-link" download>
+                                OneSpace.exe (32-bit)
+                            </a>
+                        </div>
+                        <div class="download-section">
+                            <h4>macOS</h4>
+                            <a href="~/install/OneSpace.app" class="download-link" download>
+                                OneSpace.app
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>
@@ -63,6 +89,7 @@
                 <li><a href="index.html" class="nav-tab active">Начало</a></li>
             <li><a href="institutions.html" class="nav-tab">Институции</a></li>
             <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+            <li><a href="legal.html" class="nav-tab">Закони</a></li>
             <li><a href="calendar.html" class="nav-tab">Календар</a></li>
             <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
             <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
@@ -73,6 +100,7 @@
                 <li><a href="index.html" class="mobile-nav-tab active">Начало</a></li>
                 <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
                 <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                <li><a href="legal.html" class="mobile-nav-tab">Закони</a></li>
                 <li><a href="calendar.html" class="mobile-nav-tab">Календар</a></li>
                 <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
                 <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
@@ -176,6 +204,49 @@
             <!-- More Banking Button -->
             <div class="more-button-container">
                 <a href="banks.html" class="more-button">Вижте всички банки</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Important Laws Section -->
+    <div class="useful-links-section">
+        <div class="container">
+            <h2 class="section-title">Важни закони</h2>
+            <div class="useful-links-grid">
+                <a href="https://www.lex.bg/laws/ldoc/2135533201" target="_blank" class="useful-link-card">
+                    <div class="useful-link-icon">
+                        <span style="font-size: 40px;">📊</span>
+                    </div>
+                    <h3 class="useful-link-title">ЗДДС</h3>
+                    <p class="useful-link-description">Закон за данък добавена стойност</p>
+                </a>
+
+                <a href="https://www.lex.bg/laws/ldoc/2135538631" target="_blank" class="useful-link-card">
+                    <div class="useful-link-icon">
+                        <span style="font-size: 40px;">💰</span>
+                    </div>
+                    <h3 class="useful-link-title">ЗДДФЛ</h3>
+                    <p class="useful-link-description">Закон за данъка върху доходите на физическите лица</p>
+                </a>
+
+                <a href="https://www.lex.bg/laws/ldoc/1594373121" target="_blank" class="useful-link-card">
+                    <div class="useful-link-icon">
+                        <span style="font-size: 40px;">⚖️</span>
+                    </div>
+                    <h3 class="useful-link-title">Кодекс на труда</h3>
+                    <p class="useful-link-description">Трудово законодателство</p>
+                </a>
+
+                <a href="https://lex.bg/laws/ldoc/2136697598" target="_blank" class="useful-link-card">
+                    <div class="useful-link-icon">
+                        <span style="font-size: 40px;">📚</span>
+                    </div>
+                    <h3 class="useful-link-title">Закон за счетоводството</h3>
+                    <p class="useful-link-description">Счетоводни принципи и правила</p>
+                </a>
+            </div>
+            <div class="more-button-container">
+                <a href="legal.html" class="more-button">Вижте всички закони</a>
             </div>
         </div>
     </div>
