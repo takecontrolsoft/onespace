@@ -22,12 +22,30 @@ function filterLegalLinks(searchTerm) {
 
     legalLinks.forEach(link => {
         const dataSearch = link.getAttribute('data-search') || '';
-        const linkText = link.querySelector('.legal-text').textContent.toLowerCase();
+        const textElement = link.querySelector('.legal-text');
+        const linkText = textElement ? textElement.textContent.toLowerCase() : '';
 
         if (linkText.includes(normalizedSearchTerm) || dataSearch.includes(normalizedSearchTerm)) {
             link.style.display = 'flex';
         } else {
             link.style.display = 'none';
+        }
+    });
+
+    // Скриване/показване на целите секции
+    const legalSections = document.querySelectorAll('.legal-section');
+    legalSections.forEach(section => {
+        const sectionLinks = section.querySelectorAll('.legal-link');
+        const visibleLinks = Array.from(sectionLinks).filter(link => 
+            link.style.display !== 'none' && link.style.display !== ''
+        );
+        
+        if (normalizedSearchTerm === '') {
+            // При празно търсене показваме всички секции
+            section.style.display = 'block';
+        } else {
+            // При търсене скриваме цялата секция ако няма видими линкове
+            section.style.display = visibleLinks.length > 0 ? 'block' : 'none';
         }
     });
 }
