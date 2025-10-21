@@ -26,6 +26,13 @@
     <meta name="keywords" content="счетоводители, НАП, НОИ, НСИ, банки, календар, декларации, срокове, България">
     <meta name="author" content="OneSpace">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://onespace.bg/">
+    
+    <!-- Language -->
+    <meta http-equiv="content-language" content="bg">
+    <link rel="alternate" hreflang="bg" href="https://onespace.bg/">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://onespace.bg/">
@@ -51,6 +58,59 @@
     <meta name="msapplication-TileImage" content="favicon-32x32.png">
     
     <link rel="stylesheet" href="styles.css?v=menu-visible">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "OneSpace - Единен портал за счетоводители",
+      "alternateName": "OneSpace Portal",
+      "url": "https://onespace.bg",
+      "description": "Бърз достъп до държавни институции, банкови услуги и счетоводни инструменти. Календар на счетоводителя с важни срокове и декларации.",
+      "inLanguage": "bg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Take Control - Software & Infrastructure",
+        "url": "https://products.takecontrolsoft.eu/"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://onespace.bg/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Счетоводни услуги и връзки",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "НАП - Национална агенция за приходите",
+            "url": "https://portal.nra.bg/"
+          },
+          {
+            "@type": "ListItem", 
+            "position": 2,
+            "name": "НОИ - Национален осигурителен институт",
+            "url": "https://www.nssi.bg"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "НСИ - Национален статистически институт", 
+            "url": "https://www.nsi.bg"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Търговски регистър",
+            "url": "https://portal.registryagency.bg/"
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
 <header>
