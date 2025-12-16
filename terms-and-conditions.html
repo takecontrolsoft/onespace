@@ -212,7 +212,135 @@
         </div>
     </footer>
 
+    <!-- Тънка рекламна лента за НАПИ и НСИ Асистент -->
+    <div class="ad-banner" id="adBanner">
+        <div class="ad-banner-content">
+            <div class="ad-banner-slider">
+                <!-- Слайд 1: НАПИ -->
+                <div class="ad-banner-slide active" data-slide="0">
+                    <a href="https://napi.bg" target="_blank" class="ad-banner-left" style="text-decoration: none; color: inherit;">
+                        <div class="ad-logo">
+                            <img src="https://napi.bg/favicon.png" alt="НАПИ" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span style="display: none;">🤖</span>
+                        </div>
+                        <div class="ad-banner-text">
+                            <div class="ad-banner-title">НАПИ</div>
+                            <div class="ad-banner-subtitle">Автоматизирано подаване на декларации към Националната агенция за приходите</div>
+                        </div>
+                    </a>
+                    <div class="ad-banner-right">
+                        <a href="https://napi.bg" target="_blank" class="ad-cta-button">Научете повече</a>
+                    </div>
+                </div>
+                <!-- Слайд 2: НСИ Асистент -->
+                <div class="ad-banner-slide" data-slide="1">
+                    <a href="https://nsiassistant.bg" target="_blank" class="ad-banner-left" style="text-decoration: none; color: inherit;">
+                        <div class="ad-logo">
+                            <img src="https://nsiassistant.bg/favicon.png" alt="НСИ Асистент" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span style="display: none;">📊</span>
+                        </div>
+                        <div class="ad-banner-text">
+                            <div class="ad-banner-title">НСИ Асистент</div>
+                            <div class="ad-banner-subtitle">Помощник за подаване на годишни отчети към Националния статистически институт през Информационна система "Бизнес статистика" - isbs.nsi.bg на НСИ</div>
+                        </div>
+                    </a>
+                    <div class="ad-banner-right">
+                        <a href="https://nsiassistant.bg" target="_blank" class="ad-cta-button">Научете повече</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-slider-controls">
+                <button class="ad-slider-btn" id="prevSlide">‹</button>
+                <div class="ad-slider-dots">
+                    <span class="ad-slider-dot active" data-slide="0"></span>
+                    <span class="ad-slider-dot" data-slide="1"></span>
+                </div>
+                <button class="ad-slider-btn" id="nextSlide">›</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    
+<!-- Ad Banner Slider Script -->
+<script>
+    (function() {
+        const banner = document.getElementById('adBanner');
+        if (!banner) return;
+        
+        const slides = banner.querySelectorAll('.ad-banner-slide');
+        const dots = banner.querySelectorAll('.ad-slider-dot');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+            if (dots[index]) {
+                dots[index].classList.add('active');
+            }
+            
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+        
+        function prevSlide() {
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        }
+        
+        function startAutoSlide() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        function stopAutoSlide() {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                stopAutoSlide();
+                showSlide(index);
+                startAutoSlide();
+            });
+        });
+        
+        banner.addEventListener('mouseenter', stopAutoSlide);
+        banner.addEventListener('mouseleave', startAutoSlide);
+        
+        showSlide(0);
+        startAutoSlide();
+    })();
+</script>
     <!-- Cronitor RUM -->
 <script async src="https://rum.cronitor.io/script.js"></script>
 <script>

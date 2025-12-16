@@ -10,3 +10,4 @@ Crawl-delay: 1
 # Disallow specific paths if needed (currently none)
 # Disallow: /admin/
 # Disallow: /private/
+
