@@ -1,6 +1,6 @@
 // Функция за търсене в институции
 function filterInstitutions(searchTerm) {
-    const cards = document.querySelectorAll('.institution-card');
+    const cards = document.querySelectorAll('.main-institution-card, .institution-card');
     const term = searchTerm.toLowerCase();
     
     cards.forEach(card => {
@@ -9,6 +9,24 @@ function filterInstitutions(searchTerm) {
             card.style.display = 'block';
         } else if (term === '') {
             card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Функция за търсене в банки
+function filterBanks(searchTerm) {
+    const cards = document.querySelectorAll('.bank-card');
+    const term = searchTerm.toLowerCase().trim();
+    
+    cards.forEach(card => {
+        const bankName = card.querySelector('.bank-name');
+        const bankLink = card.querySelector('.bank-link');
+        const bankText = (bankName ? bankName.textContent : '') + ' ' + (bankLink ? bankLink.textContent : '');
+        
+        if (term === '' || bankText.toLowerCase().includes(term)) {
+            card.style.display = '';
         } else {
             card.style.display = 'none';
         }

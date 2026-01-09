@@ -9,7 +9,7 @@ body {
     background: #f5f6f8;
     color: #2c3e50;
     line-height: 1.6;
-    padding-bottom: 60px; /* Space for fixed ad banner */
+    padding-bottom: 70px; /* Space for fixed ad banner */
 }
 
 header {
@@ -320,7 +320,8 @@ nav {
 
 
 .content-section {
-    padding: 30px 0;
+    padding: 20px 0;
+    position: relative;
 }
 
 .institutions-grid {
@@ -679,7 +680,8 @@ nav {
 .header-with-search {
     display: flex;
     justify-content: flex-end;
-    margin: 20px 0;
+    margin: 0;
+    flex: 1;
 }
 
 /* Calendar Navigation Layout */
@@ -692,21 +694,21 @@ nav {
 .header-with-search .search-box {
     margin: 0;
     position: relative;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 250px;
+    max-width: 350px;
 }
 
 .search-box {
-    margin: 20px 0;
+    margin: 0;
     position: relative;
 }
 
 .search-box input {
     width: 100%;
-    padding: 12px 16px;
+    padding: 8px 14px;
     border: 2px solid #e1e4e8;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 14px;
     transition: border-color 0.2s;
 }
 
@@ -726,16 +728,17 @@ nav {
 
 .back-link {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 4px 8px;
     background: transparent;
     color: #6c757d;
     text-decoration: none;
     border-radius: 4px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     transition: color 0.2s;
-    margin-right: 15px;
+    margin-right: 10px;
     vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .back-link:hover {
@@ -748,13 +751,26 @@ nav {
 .header-with-back {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    gap: 15px;
+    position: relative;
 }
 
 .header-with-back h1,
 .header-with-back h2 {
     margin: 0;
     flex: 1;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+/* Search box вътре в header-with-back - залепено вдясно */
+.header-with-back .header-with-search {
+    margin: 0;
+    margin-left: auto;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 /* Advertising Banner - Thin, non-intrusive */
@@ -765,12 +781,13 @@ nav {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    background: linear-gradient(135deg, #006e7d 0%, #004d5a 100%) !important;
-    color: white;
-    height: 60px;
+    background: linear-gradient(135deg, #ffeb3b 0%, #fff176 100%) !important;
+    color: #1a1a1a;
+    height: 70px;
     overflow: hidden;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 16px rgba(255, 235, 59, 0.35);
     z-index: 9999 !important;
+    border-top: 2px solid #fdd835;
 }
 
 .ad-banner.show {
@@ -854,7 +871,7 @@ nav {
     font-size: 15px;
     font-weight: 600;
     margin: 0 0 2px 0;
-    color: white;
+    color: #1a1a1a;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -863,7 +880,7 @@ nav {
 
 .ad-banner-subtitle {
     font-size: 12px;
-    opacity: 0.9;
+    opacity: 0.85;
     margin: 0;
     line-height: 1.4;
     display: -webkit-box;
@@ -871,6 +888,7 @@ nav {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-align: center;
+    color: #2a2a2a;
 }
 
 .ad-banner-features {
@@ -892,30 +910,32 @@ nav {
 }
 
 .ad-logo {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.15);
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.9);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 24px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .ad-logo img {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     object-fit: contain;
     border-radius: 4px;
 }
 
 .ad-logo:hover {
-    background: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,1);
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .ad-cta-button {
@@ -978,9 +998,9 @@ nav {
 }
 
 .ad-slider-btn {
-    background: rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.2);
     border: none;
-    color: white;
+    color: #1a1a1a;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -990,11 +1010,13 @@ nav {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
+    font-weight: bold;
 }
 
 .ad-slider-btn:hover {
-    background: rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.3);
     transform: scale(1.1);
+    color: #000;
 }
 
 .ad-slider-btn:disabled {
@@ -1012,13 +1034,13 @@ nav {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.3);
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .ad-slider-dot.active {
-    background: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.7);
     transform: scale(1.2);
 }
 
@@ -1059,7 +1081,7 @@ nav {
 /* Responsive design for ad banner */
 @media (max-width: 768px) {
     .ad-banner {
-        height: 70px;
+        height: 80px;
     }
     
     .ad-banner-content {
@@ -1079,14 +1101,14 @@ nav {
     }
     
     .ad-logo {
-        width: 32px;
-        height: 32px;
-        font-size: 16px;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
     }
     
     .ad-logo img {
-        width: 24px;
-        height: 24px;
+        width: 34px;
+        height: 34px;
     }
     
     .ad-cta-button {
@@ -1176,7 +1198,7 @@ nav {
     }
     
     body {
-        padding-bottom: 80px; /* Space for fixed ad banner on mobile */
+        padding-bottom: 90px; /* Space for fixed ad banner on mobile */
     }
 }
 
@@ -1524,14 +1546,41 @@ nav {
 }
 
 @media (max-width: 768px) {
+    .header-with-back {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .header-with-back .header-with-search {
+        width: 100%;
+        justify-content: stretch;
+    }
+    
     .header-with-search {
         justify-content: stretch;
+        margin-bottom: 15px;
     }
     
     .header-with-search .search-box {
         min-width: auto;
         max-width: none;
         width: 100%;
+    }
+    
+    .header-with-back {
+        margin-bottom: 10px;
+    }
+    
+    .header-with-back h1,
+    .header-with-back h2 {
+        font-size: 1.3rem;
+    }
+    
+    .back-link {
+        font-size: 18px;
+        padding: 4px 6px;
+        margin-right: 8px;
     }
     
     .ministry-row {
@@ -2564,13 +2613,13 @@ nav {
 
 /* PWA Install Button Styles - 3D Effect */
 .pwa-install-btn {
-    background: linear-gradient(145deg, #9DD3CC, #7BB3AC) !important;
+    background: linear-gradient(145deg, #ff6b35, #ff5722) !important;
     color: white !important;
     border: none !important;
-    border-top: 2px solid #A8D8D1 !important;
-    border-left: 2px solid #A8D8D1 !important;
-    border-right: 2px solid #6BA39C !important;
-    border-bottom: 2px solid #6BA39C !important;
+    border-top: 2px solid #ff8a65 !important;
+    border-left: 2px solid #ff8a65 !important;
+    border-right: 2px solid #e64a19 !important;
+    border-bottom: 2px solid #e64a19 !important;
     padding: 12px 20px !important;
     border-radius: 8px !important;
     font-size: 14px !important;
@@ -2581,8 +2630,8 @@ nav {
     gap: 8px !important;
     transition: all 0.2s ease !important;
     box-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.3),
-        0 2px 4px rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(255, 107, 53, 0.4),
+        0 2px 4px rgba(255, 107, 53, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1) !important;
     backdrop-filter: none !important;
@@ -2591,31 +2640,31 @@ nav {
 }
 
 .pwa-install-btn:hover {
-    background: linear-gradient(145deg, #7BB3AC, #6BA39C) !important;
+    background: linear-gradient(145deg, #ff5722, #e64a19) !important;
     transform: translateY(-1px) !important;
     box-shadow: 
-        0 6px 12px rgba(0, 0, 0, 0.4),
-        0 3px 6px rgba(0, 0, 0, 0.3),
+        0 6px 12px rgba(255, 107, 53, 0.5),
+        0 3px 6px rgba(255, 107, 53, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.2),
         inset 0 -1px 0 rgba(0, 0, 0, 0.2) !important;
-    border-top-color: #9DD3CC !important;
-    border-left-color: #9DD3CC !important;
-    border-right-color: #5B938C !important;
-    border-bottom-color: #5B938C !important;
+    border-top-color: #ff6b35 !important;
+    border-left-color: #ff6b35 !important;
+    border-right-color: #d84315 !important;
+    border-bottom-color: #d84315 !important;
 }
 
 .pwa-install-btn:active {
     transform: translateY(1px) !important;
-    background: linear-gradient(145deg, #6BA39C, #5B938C) !important;
+    background: linear-gradient(145deg, #e64a19, #d84315) !important;
     box-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.3),
-        0 1px 2px rgba(0, 0, 0, 0.2),
+        0 2px 4px rgba(255, 107, 53, 0.4),
+        0 1px 2px rgba(255, 107, 53, 0.3),
         inset 0 2px 4px rgba(0, 0, 0, 0.2),
         inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
-    border-top-color: #5B938C !important;
-    border-left-color: #5B938C !important;
-    border-right-color: #6BA39C !important;
-    border-bottom-color: #6BA39C !important;
+    border-top-color: #d84315 !important;
+    border-left-color: #d84315 !important;
+    border-right-color: #e64a19 !important;
+    border-bottom-color: #e64a19 !important;
 }
 
 .install-icon {
