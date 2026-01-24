@@ -2129,6 +2129,79 @@ nav {
     margin: 0;
 }
 
+/* BNB Banner */
+.bnb-banner {
+    display: block;
+    background: linear-gradient(135deg, #6b2628 0%, #f4e09b 100%);
+    border-radius: 12px;
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bnb-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107, 38, 40, 0.3);
+}
+
+.bnb-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.bnb-banner-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.bnb-banner-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.bnb-banner-text strong {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.bnb-banner-text span {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+}
+
+.bnb-banner-arrow {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .bnb-banner {
+        padding: 12px 15px;
+    }
+
+    .bnb-banner-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .bnb-banner-text strong {
+        font-size: 1rem;
+    }
+
+    .bnb-banner-text span {
+        font-size: 0.8rem;
+    }
+}
+
 /* Responsive Design for Banking Cards */
 @media (max-width: 768px) {
     .banking-cards {
