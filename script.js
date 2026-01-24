@@ -19,13 +19,32 @@ function filterInstitutions(searchTerm) {
 function filterBanks(searchTerm) {
     const cards = document.querySelectorAll('.bank-card');
     const term = searchTerm.toLowerCase().trim();
-    
+
     cards.forEach(card => {
         const bankName = card.querySelector('.bank-name');
         const bankLink = card.querySelector('.bank-link');
         const bankText = (bankName ? bankName.textContent : '') + ' ' + (bankLink ? bankLink.textContent : '');
-        
+
         if (term === '' || bankText.toLowerCase().includes(term)) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Функция за търсене в удостоверяване
+function filterCertification() {
+    const searchInput = document.getElementById('certificationSearchInput');
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.bank-card');
+
+    cards.forEach(card => {
+        const name = card.querySelector('.bank-name');
+        const description = card.querySelector('p');
+        const cardText = (name ? name.textContent : '') + ' ' + (description ? description.textContent : '');
+
+        if (searchTerm === '' || cardText.toLowerCase().includes(searchTerm)) {
             card.style.display = '';
         } else {
             card.style.display = 'none';
