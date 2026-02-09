@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#006e7d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OneSpace">
+    <link rel="apple-touch-icon" href="images/onespace-logo.png">
+    <meta name="msapplication-TileColor" content="#006e7d">
+    <meta name="msapplication-TileImage" content="images/onespace-logo.png">
+    <title>Декларации НАП - Единен портал за счетоводители</title>
+    <meta name="description" content="Всички декларации към НАП - подоходни данъци, ДДС, осигуряване, фискални устройства и други. Бърз достъп до електронно подаване през портала на НАП.">
+    <meta name="keywords" content="декларации, НАП, ДДС, ЗДДФЛ, ЗКПО, обр. 1, обр. 6, годишна данъчна декларация, счетоводители">
+    <meta name="author" content="OneSpace">
+    <link rel="canonical" href="https://onespace.bg/declarations.html">
+    <meta http-equiv="content-language" content="bg">
+    <link rel="alternate" hreflang="bg" href="https://onespace.bg/declarations.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onespace.bg/declarations.html">
+    <meta property="og:title" content="Декларации НАП - OneSpace Portal">
+    <meta property="og:description" content="Всички декларации към НАП. Бърз достъп до електронно подаване.">
+    <meta property="og:image" content="https://onespace.bg/images/onespace-portal-view.png?v=2">
+    <meta property="og:site_name" content="OneSpace Portal">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Декларации НАП - OneSpace Portal">
+    <meta property="twitter:description" content="Всички декларации към НАП. Бърз достъп до електронно подаване.">
+    <meta property="twitter:image" content="https://onespace.bg/images/onespace-portal-view.png?v=2">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="styles.css?v=menu-visible">
+    <style>
+        .declaration-group .legal-links { gap: 2px; }
+        .declaration-group .legal-link {
+            padding: 0.35rem 0.6rem;
+            border-radius: 5px;
+        }
+        .declaration-group .legal-text {
+            font-size: 0.85rem;
+            line-height: 1.25;
+        }
+        .declaration-group h2 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+        .declaration-group { margin-bottom: 0.8rem; padding: 0.8rem; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <img src="images/onespace-logo.png" alt="OneSpace Logo" class="site-logo">
+            <div class="header-text">
+                <h1>Единен портал за счетоводители</h1>
+                <p class="subtitle">Декларации и формуляри към НАП</p>
+            </div>
+            <div class="header-download">
+                <button id="pwa-install-btn" class="pwa-install-btn" style="display: none;">
+                    <span class="install-icon">💻</span>
+                    <span class="install-text">Инсталирай</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" id="mobileToggleBtn">☰</button>
+            <ul class="nav-tabs">
+                <li><a href="index.html" class="nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="nav-tab">Институции</a></li>
+                <li><a href="banks.html" class="nav-tab">Банкиране</a></li>
+                <li><a href="declarations.html" class="nav-tab active">Декларации</a></li>
+                <li><a href="certification.html" class="nav-tab">Удостоверяване</a></li>
+                <li><a href="legal.html" class="nav-tab">Закони</a></li>
+                <li><a href="ministries.html" class="nav-tab">Министерства</a></li>
+                <li><a href="useful.html" class="nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-tabs">
+                <li><a href="index.html" class="mobile-nav-tab">Начало</a></li>
+                <li><a href="institutions.html" class="mobile-nav-tab">Институции</a></li>
+                <li><a href="banks.html" class="mobile-nav-tab">Банкиране</a></li>
+                <li><a href="declarations.html" class="mobile-nav-tab active">Декларации</a></li>
+                <li><a href="certification.html" class="mobile-nav-tab">Удостоверяване</a></li>
+                <li><a href="legal.html" class="mobile-nav-tab">Закони</a></li>
+                <li><a href="ministries.html" class="mobile-nav-tab">Министерства</a></li>
+                <li><a href="useful.html" class="mobile-nav-tab">Полезни връзки</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <div class="content-section">
+        <div class="header-with-back">
+            <a href="index.html" class="back-link">←</a>
+            <h2 class="section-title" style="text-align: left;">Декларации НАП</h2>
+            <div class="header-with-search">
+                <div class="search-box">
+                    <input type="text" placeholder="Търсене в декларации..." onkeyup="filterDeclarations(this.value)">
+                </div>
+            </div>
+        </div>
+
+        <a href="https://portal.nra.bg/" target="_blank" class="bnb-banner" style="background: linear-gradient(135deg, #006e7d 0%, #004d5a 100%);">
+            <div class="bnb-banner-content">
+                <img src="images/nra-logo.png" alt="НАП" class="bnb-banner-logo" style="background: white; border-radius: 8px; padding: 5px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span style="display: none; font-size: 24px;">🏛️</span>
+                <div class="bnb-banner-text">
+                    <strong>Портал на НАП</strong>
+                    <span>Електронни услуги на Национална агенция за приходите</span>
+                </div>
+                <span class="bnb-banner-arrow">→</span>
+            </div>
+        </a>
+
+        <div class="legal-section declaration-group" style="background:#f0f9fa;border:1px solid #d0e8eb;">
+            <h2>Ежемесечни декларации</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:4px;">
+                <a href="https://portal.nra.bg/details/vat-report" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">СД по ЗДДС + дневници</span></div></a>
+                <a href="https://portal.nra.bg/details/dec1-and-6" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларации обр. 1 и обр. 6</span></div></a>
+                <a href="https://portal.nra.bg/details/etz-62" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">ЕТЗ - трудови записи</span></div></a>
+                <a href="https://portal.nra.bg/details/etz-123" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">ЕТЗ - промяна на работодател</span></div></a>
+                <a href="https://portal.nra.bg/details/dec3" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация обр. 3</span></div></a>
+                <a href="https://portal.nra.bg/details/intrastat" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Интрастат декларации</span></div></a>
+                <a href="https://portal.nra.bg/details/fuel-price-month" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Покупна цена на горивата</span></div></a>
+                <a href="https://portal.nra.bg/details/fuel-receivers" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Данни за течни горива чл.118</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>ДДС декларации</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/vat-application" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Заявление за регистрация по ЗДДС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистрация на лица по ЗДДС № 1718</span></div></a>
+                <a href="https://portal.nra.bg/details/dereg-vat" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Заявление за дерегистрация по ЗДДС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Дерегистрация на лица по ЗДДС №1895</span></div></a>
+                <a href="https://portal.nra.bg/details/vat-report" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка-декларация по ЗДДС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на справка – декларация по ЗДДС/Приемане на VIES – декларация №627/№629</span></div></a>
+                <a href="https://portal.nra.bg/details/note-publ-sale-131" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомление за публична продан на вещи на регистрирано по ЗДДС лице /чл. 131 от ЗДДС/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на уведомление за извършена продажба по чл. 131 от ЗДДС №628</span></div></a>
+                <a href="https://portal.nra.bg/details/protocol-9-77" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Протокол-опис за упражняване на право на приспадане на начислен данък при дерегистрация и последваща регистрация</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Протокол-опис за упражняване на право на приспадане на начислен данък при дерегистрация и последваща регистрация /Приложение № 9 към чл. 77, ал. 4/</span></div></a>
+                <a href="https://portal.nra.bg/details/cash-registr" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Искане за регистрация за прилагане на специалния режим за касова отчетност на данък върху добавената стойност</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистрация за прилагане на специалния режим за касова отчетност на данък върху добавената стойност №1273</span></div></a>
+                <a href="https://portal.nra.bg/details/vat-refund" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Искания за възстановяване на ДДС от търговци, установени в страната, към държави-членки на ЕС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на искане за възстановяване на ДДС на търговец, установен в страната, към друга държава - членка на ЕС (VAT Refund) №409</span></div></a>
+                <a href="https://portal.nra.bg/details/opis-vat-74" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Опис на наличните активи по смисъла на закона за счетоводството и на получените услуги преди датата на регистрацията по ЗДДС, за които е налице право на приспадане на данъчен кредит на основание чл. 74 от ЗДДС (чл. 61, ал. 1 от ППЗДДС)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Oпис по чл. 74 ЗДДС /Приложение № 2 към чл. 61, ал. 1 от ППЗДДС/</span></div></a>
+                <a href="https://portal.nra.bg/details/opis-vat-76" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Опис на наличните активи по смисъла на ЗС и на получените услуги преди датата на регистрацията по ЗДДС, за които е налице право на приспадане на данъчен кредит на основание чл. 74 от ЗДДС (чл. 61, ал. 1 от ППЗДДС)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Опис по чл. 76 ЗДДС /Приложение № 3 към чл. 61, ал. 2 от ППЗДДС/</span></div></a>
+                <a href="https://portal.nra.bg/details/opis-vat-10" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Опис на стоки, получени във връзка с правоприемство по чл. 10 от ЗДДС, за които е налице право на приспадане на данъчен кредит на основание чл. 10, ал. 2 от ЗДДС (чл. 60, ал. 5 от ППЗДДС)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Опис по чл. 10 ЗДДС /Приложение № 7 към чл. 60, ал. 5 от ППЗДДС/</span></div></a>
+                <a href="https://portal.nra.bg/details/report-vat-68-4" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за извършеното приспадане на ДДС (Приложение №6 към чл. 68, ал. 4 от ППЗДДС)</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Осигуряване и трудови договори</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/dec1-and-6" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на декларации за осигурителни вноски по образец 1 и образец  6</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на Декларация образец № 1 &quot;Данни за осигуреното лице&quot; №340 и декларация образец № 6 &quot;Данни за дължими вноски и данък по Закона за данъците върху доходите на физическите лица&quot; №1937</span></div></a>
+                <a href="https://portal.nra.bg/details/etz-62" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на данни за ЕТЗ</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на електронни трудови записи за сключване, изменение и прекратяване на трудов договор</span></div></a>
+                <a href="https://portal.nra.bg/details/dec3" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на декларация за здравно осигурени от държавния бюджет по образец 3</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация образец № 3 “Данни за здравно осигуряване на лица, осигурени от републиканския бюджет”, от фонд “Безработица” и други №1484</span></div></a>
+                <a href="https://portal.nra.bg/details/etz-123" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на данни за ЕТЗ за промяна на работодател</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на електронни трудови записи за промяна на работодател без прекратяване на трудово правоотношение</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Подоходни данъци</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/dec-corptax-92" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Годишна данъчна декларация за облагане с корпоративен данък /чл. 92 от ЗКПО/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на Годишна данъчна декларация по чл. 92, ал. 1 Закон за корпоративното подоходно облагане №1929</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-tax-55-1" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация за дължимите данъци /чл. 55, ал. 1 от ЗДДФЛ и чл. 201, ал. 1 от ЗКПО/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Декларация по чл. 55, ал. 1 от ЗДДФЛ и чл. 201, ал. 1 от ЗКПО за дължими данъци №1869</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-142-5" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация по чл. 142, ал. 5 от ДОПК за предоставени данъчни облекчения по СИДДО</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация за доходи на чуждестранни лица и предоставени данъчни облекчения по спогодби за избягване на двойното данъчно облагане №1269</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-annualtax-budget-252" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация за годишния корпоративен данък на бюджетните предприятия /чл. 252 от ЗКПО/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на годишна данъчна декларация за облагане с данък върху приходите на бюджетните предприятия №1032</span></div></a>
+                <a href="https://portal.nra.bg/details/rep-income-73" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за изплатени доходи на физически лица по чл. 73, ал. 1 от ЗДДФЛ (действаща до 31.12.2018 г.)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на Справка за изплатени доходи, различни от трудови правоотношения на физически лица</span></div></a>
+                <a href="https://portal.nra.bg/details/info-income-dif-73-6" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка по чл.73, ал. 6 от ЗДДФЛ за изплатени през годината доходи и за удържаните данък и задължителни осигурителни вноски</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на информация за изплатени доходи по трудови правоотношения на физически лица</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-tax-add-gambling-219" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация за дължимия данък върху приходите по чл. 219 от ЗКПО /отменена/, за минали периоди</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на Годишна данъчна декларация за данъка върху помощните и спомагателните дейности по смисъла на Закона за хазарта</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-gambling-239" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация по чл. 239, ал. 1 и 2 от ЗКПО за направените залози и данък от организатори на хазартни игри</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация за данъка върху хазартната дейност №1184</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-change-adv-88" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларациите по чл. 87а от ЗКПО за деклариране вида и размера на авансовите вноски и по чл. 88 от ЗКПО за промени на авансовите вноски</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация за деклариране вида и размера на авансовите вноски и за промени на авансовите вноски по ЗКПО №824</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-insuarance-tax-14" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация за дължимия данък върху застрахователните премии /чл. 14 ал. 1 от ЗДЗП/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация за дължимия данък върху застрахователните премии №1483</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-246" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация за данък върху хазартна дейност от игри с игрални автомати и игри в казино /чл. 246 от ЗКПО/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация за данъка върху хазартната дейност от игри с игрални автомати и игри в игрално казино №964</span></div></a>
+                <a href="https://portal.nra.bg/details/info-income-dif-73" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Приемане на Справка за изплатени доходи, различни от трудови правоотношения на физически лица /чл. 73, ал. 1 от ЗДДФЛ/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на Справка за изплатени доходи на физически лица №1253</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>SAF-T</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/saft-sandbox" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на ТЕСТОВ стандартен одитен файл за данъчни цели (SAF-T)</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Интрастат декларации</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/intrastat" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Приемане на Интрастат декларации</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Плащане и изчисляване</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/application-health" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Заявяване на приоритетно плащане на осигурителни вноски за допълнително задължително пенсионно осигуряване</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на заявление за приоритетно плащане на осигурителни вноски за Допълнително задължително пенсионно осигуряване №2653</span></div></a>
+                <a href="https://portal.nra.bg/details/request-recovery" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Искане за прихващане или възстановяване</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на искане за прихващане или възстановяване на надвнесени суми №3221</span></div></a>
+                <a href="https://portal.nra.bg/details/dopk-1694" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Заявление по чл. 169, ал. 4 от ДОПК</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на заявление за погасяване на задължения по реда на чл. 169, ал. 4 от Данъчно-осигурителния процесуален кодекс</span></div></a>
+                <a href="https://portal.nra.bg/details/liabilities-payment" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Плащане на задължения чрез виртуален ПОС терминал или ePay.bg</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Плащане на задължения към бюджета по електронен път</span></div></a>
+                <a href="https://portal.nra.bg/details/liabilities-payment-2" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за задълженията с възможност за извършване на плащане</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Справка за задълженията с възможност за извършване на плащания № 646</span></div></a>
+                <a href="https://portal.nra.bg/details/interest-calc" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Предоставяне на лихвен калкулатор за изчисляване на дължимите лихви за невнесени в срок задължения за данъци и осигурителни вноски</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Лихвен калкулатор за просрочени задължения към НАП</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Справки</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/payment-distribution" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за извършени плащания, преведени по сметки на НАП и погасени задължения с тях</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Справка за извършени плащания, преведени по сметки на НАП и погасени задължения с тях №974</span></div></a>
+                <a href="https://portal.nra.bg/details/report-alldocs" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за всички подадени документи от задълженото лице по електронен път</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Справка за всички подадени документи</span></div></a>
+                <a href="https://portal.nra.bg/details/dept-and-payments-report" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка, извеждаща информация за задълженията и плащанията на лицата</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Справка за задълженията и плащанията №417</span></div></a>
+                <a href="https://portal.nra.bg/details/actual-1-5" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Актуално състояние на данните, декларирани с Декларация образец 1 / образец 5 по осигурител</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на информация за актуално състояние на данните, декларирани с декларации обр. №1 и обр. №5 по осигурител №2655</span></div></a>
+                <a href="https://portal.nra.bg/details/obligatory-ins" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Актуално състояние на данните, декларирани с Декларация образец №6 / Заявление за разпределение на осигурителни вноски</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на информация за актуално състояние на данните, декларирани с декларация образец № 6 и/или Заявление за разпределение на осигурителни вноски преди 2005 г. №2656</span></div></a>
+                <a href="https://portal.nra.bg/details/dec736-bus-rep" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Актуално състояние на данните, декларирани със Справката по чл. 73, ал. 6 от ЗДДФЛ за изплатените през годината доходи по трудови правоотношения (за работодателите, подали данните)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка за актуалното състояние на данните, декларирани със Справката по чл. 73, ал. 6 от ЗДДФЛ за изплатени през годината доходи по трудови правоотношения</span></div></a>
+                <a href="https://portal.nra.bg/details/etz-report" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Предоставяне на справка за актуално състояние от единен електронен трудов запис</span></div></a>
+                <a href="https://portal.nra.bg/details/cash-receipt-verify" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Проверка на касови бележки</span></div></a>
+                <a href="https://portal.nra.bg/details/vat-tax-credit-right" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Предоставяне на информация за упражнено право на данъчен кредит от получател във връзка с корекция на начислен данък по чл. 126б от ЗДДС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на информация за упражнено право на данъчен кредит от получател, във връзка с корекция на начислен данък при несъбираемо вземане, по Закона за данъка върху добавената стойност (ЗДДС)</span></div></a>
+                <a href="https://portal.nra.bg/details/vat-reg-diffs" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справки: „Несъответствия в дневник за покупките“, „Несъответствия в дневник за продажбите“, „Обявени продажби от регистрирани по ЗДДС лица към ЗЛ“</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на информация за несъответствия в дневниците за покупките и дневниците за продажбите по ЗДДС</span></div></a>
+                <a href="https://portal.nra.bg/details/dec731-payer" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Актуално състояние на данните, декларирани със Справката за изплатени през годината доходи по чл. 73, ал. 1 от ЗДДФЛ и за удържаните данък и задължителни осигурителни вноски (за платците на доходи, подали данните)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка за актуалното състояние на данните, декларирани със Справката за изплатени през годината доходи по чл. 73, ал. 1 от ЗДДФЛ и за удържаните данък и задължителни осигурителни вноски</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Удостоверения и копия на документи</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/doc-issue-bg" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Издаване на удостоверение за местно лице за данъчни цели на България</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Издаване на Удостоверение за местно лице на Република България №2637</span></div></a>
+                <a href="https://portal.nra.bg/details/doc-issue" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Издаване на Удостоверение за наличието или липсата на задължения</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Издаване на Удостоверение за наличието или липсата на задължения - №560</span></div></a>
+                <a href="https://portal.nra.bg/details/notice-77-tr" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомяване на НАП за започване на процедура по прекратяване/заличаване в Търговския регистър по чл. 77 от ДОПК</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на уведомление при прекратяване, прехвърляне на предприятие и преобразуване №386</span></div></a>
+                <a href="https://portal.nra.bg/details/notice-78-dopk" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомяване на НАП за започване на процедура по несъстоятелност по чл. 78 от ДОПК</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Уведомяване на НАП за започване на процедура по несъстоятелност №1412</span></div></a>
+                <a href="https://portal.nra.bg/details/notice-77a-tr" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомяване на НАП при откриване на производство по стабилизация на търговец по чл. 77а  от ДОПК</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Уведомяване на НАП при откриване на производство по стабилизация на търговец №2712</span></div></a>
+                <a href="https://portal.nra.bg/details/issue-doc-nra-declared" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Издаване на Удостоверение за декларирани пред НАП данни</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Издаване на Удостоверение за декларирани пред НАП данни - №1729</span></div></a>
+                <a href="https://portal.nra.bg/details/issue-doc-testator" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Издаване на Удостоверение за дължимите от наследодателя данъци и задължителни осигурителни вноски и начислени лихви върху тях</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Издаване на Удостоверение за дължимите от наследодателя данъци и задължителни осигурителни вноски и начислени лихви върху тях - №1940</span></div></a>
+                <a href="https://portal.nra.bg/details/cert-paid-taxes" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Удостоверение за платени данъци и осигуровки</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Издаване на удостоверение за платени данъци и осигуровки № 1941</span></div></a>
+                <a href="https://portal.nra.bg/details/issue-copy" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Издаване на копие на документи при поискване от клиент</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Издаване на копие на документи при поискване от клиент № 1728</span></div></a>
+                <a href="https://portal.nra.bg/details/notice-okd240" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Искане за издаване на удостоверение за приложимо осигурително законодателство А1/Уведомление - № 1731</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Издаване на удостоверение за приложимото законодателство в областта на социалната сигурност №1731</span></div></a>
+                <a href="https://portal.nra.bg/details/cert-healthins-rights" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Удостоверение за непрекъснати здравноосигурителни права</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Фискални устройства, СУПТО, е-магазини</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/info-supto-118" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Информация за използван в търговски обект софтуер за управление на продажбите/СУПТО /чл.118, ал.18 ЗДДС/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Информация, подавана от лицата по чл. 118, ал. 18 от ЗДДС, избрали да ползват в търговски обект софтуер, включен в списъка по чл. 118, ал. 16 от ЗДДС</span></div></a>
+                <a href="https://portal.nra.bg/details/online-store" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Информация, подавана от лицата по чл. 3 от Наредба №Н-18/2006 г., извършващи продажба на стоки/услуги чрез електронен магазин</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Информация, подавана от лицата по чл. 3 от Наредба №Н-18/2006г., извършващи продажби на стоки/услуги чрез електронен магазин</span></div></a>
+                <a href="https://portal.nra.bg/details/reg-fiscal" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за актуалното състояние на фискални устройства с дистанционна връзка, регистрирани на ЗЛ</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка за актуалното състояние на фискални устройства с дистанционна връзка, регистрирани на задължено лице</span></div></a>
+                <a href="https://portal.nra.bg/details/dec-software" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация за съответствие и информация за софтуер за управление на продажбите в търговски обект (СУПТО) съгласно Наредба Н-18/2006г., подавана от производител/ разпространител</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация за съответствие с нормативните изисквания и информация за СУПТО, подавани от производител/разпространител №2888</span></div></a>
+                <a href="https://portal.nra.bg/details/service-techn" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Данни за сервизните техници, преминали обучение и имащи право на сервизна дейност</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на данни за сервизни техници, преминали обучение и имащи право на сервизна дейност на електронни системи с фискална памет</span></div></a>
+                <a href="https://portal.nra.bg/details/notif-service" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомление за сервизно обслужване / ремонт на средства за измерване , работещи в състава на ЕСФП</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на уведомление за сервизно обслужване/ремонт на средства за измерване, работещи в състава на eлектронни системи с фискална памет № 2810</span></div></a>
+                <a href="https://portal.nra.bg/details/notif-service-fu" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомление за сервизно обслужване / ремонт на ФУ/ИАСУТД</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на уведомление за сервизно обслужване/ремонт на фискални устройства/интегрирани автоматизирани системи за управление на търговската дейност №2811</span></div></a>
+                <a href="https://portal.nra.bg/details/odit-317" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Стандартизиран одиторски файл от лице по чл. 3, ал.17 от Наредба № Н-18 от 2006 г.</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Подаване на стандартизиран одиторски файл от лицето по чл. 3, ал. 17 от Наредба №Н-18/13.12.2006 г.</span></div></a>
+                <a href="https://portal.nra.bg/details/service-fu" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Предоставяне на справка за подадени данни от уведомления за сервизно обслужване/ремонт на фискални устройства/интегрирани автоматизирани системи за управление на търговската дейност №3117</span></div></a>
+                <a href="https://portal.nra.bg/details/fiscaldevice-data" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Данни за ФУ от сервизна фирма</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на данни за фискални устройства от лице, извършващо сервизно обслужване на фискални устройства</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Търговия с течни горива</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/oil-containers" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Приемане на данни в НАП за наличните съдове/съоръжения за съхранение и/или зареждане с течни горива за собствени нужди от лица по чл. 118, ал. 8 от ЗДДС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на данни за наличните съдове/съоръжения за съхранение и/или зареждане с течни горива за собствени нужди</span></div></a>
+                <a href="https://portal.nra.bg/details/excise" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомление за прехвърляне собственост на акцизна стока в данъчен склад /чл. 47а по ЗАДС/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на електронно уведомление за прехвърляне на собственост върху акцизна стока, вложена в данъчен склад на нов вложител - № 2689</span></div></a>
+                <a href="https://portal.nra.bg/details/fuel-receivers" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Приемане на данни от доставчици и получатели на течни горива, по чл.118 ал.10 от ЗДДС (без дистанционна връзка)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на електронен документ за доставка (ЕДД) и електронен документ за получаване (ЕДП) на течни горива</span></div></a>
+                <a href="https://portal.nra.bg/details/fuel-price-month" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на информация за покупната цена на горивата, реализирани за календарния месец</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Покупна цена на горивата за календарния месец</span></div></a>
+                <a href="https://portal.nra.bg/details/duty-free-fuel" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Уведомление за освобождаване от обезпечение при придобиване на течни горива /чл. 176в, ал. 15 от ЗДДС/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на електронно уведомление за вписване, промяна на обстоятелства или заличаване от регистъра по чл. 176в, ал. 15 от ЗДДС</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Хазарт</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/decgambling" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Декларация по чл. 30 ал. 8 от Закона за хазарта за дължими държавни такси</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на декларация за дължими държавни такси за поддържане на лиценз за организиране на хазартни игри и за издаване и поддържане на лиценз за онлайн залагания - №1456</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Местни данъци и такси</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/mdt-services" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Услугите могат да бъдат достъпени през сайта на Министерството на електроно управление</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Услуги за местни данъци и такси</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Международен обмен на данъчна информация в областта на прякото облагане</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/info-income-legal-73a" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на информация за доходи изплатени или начислени в полза на граждани на други държави членки в ЕС /чл. 73а, ал. 5 от ЗДДФЛ/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на справка за доходи по трудови правоотношения, начислени и/или изплатени в полза на чуждестранни ФЛ, местни на държава – членка на ЕС № 2407</span></div></a>
+                <a href="https://portal.nra.bg/details/fatca-automatic" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Автоматичен обмен на финансова информация /FATCA/</span></div></a>
+                <a href="https://portal.nra.bg/details/auto-info-insurance" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Автоматичен обмен на информация за животозастрахователни продукти /чл. 73а, ал. З от ЗДДФЛ/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Автоматичен обмен на информация от застрахователите /чл. 73а, ал. 3 от ЗДДФЛ/</span></div></a>
+                <a href="https://portal.nra.bg/details/auto-art143" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Предоставяне на отчет по държави по чл. 143ф от Данъчно-осигурителния процесуален кодекс (ДОПК) от многонационална група предприятия (МГП)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на отчет по държави по чл. 143ф от Данъчно-осигурителния процесуален кодекс от многонационална група предприятия</span></div></a>
+                <a href="https://portal.nra.bg/details/notice-143sh" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">УВЕДОМЛЕНИЕ по чл. 143ш от Данъчно-осигурителния процесуален кодекс (ДОПК)  във връзка с подаването на отчети по държави от многонационална група предприятия (МГП)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на уведомление по чл. 143ш от ДОПК, във връзка с подаването на отчети по държави от многонационална група предприятия</span></div></a>
+                <a href="https://portal.nra.bg/details/pod-73a2" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Информация за целите на автоматичния обмен от  пенсионноосигурителните дружества съгласно чл. 73а, ал. 2 от ЗДДФЛ</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Автоматичен обмен на информация от пенсионно-осигурителните дружества  /чл. 73а, ал. 2 от ЗДДФЛ/</span></div></a>
+                <a href="https://portal.nra.bg/details/cross-border-schemes" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Разкриване на трансгранични данъчни схеми</span></div></a>
+                <a href="https://portal.nra.bg/details/disclosure-prof-secresy" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Разкриване съгласно чл. 143я¹, ал. 13 от ДОПК от консултант, който се позовава на професионална тайна</span></div></a>
+                <a href="https://portal.nra.bg/details/dpi-dac7" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Автоматичен обмен на информация от оператори на платформи – DPI/DAC7</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Комуникация в хода на производства</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/service-revision" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Връчване и предоставяне на документи на клиентите на НАП в рамките на контролни производства (проверки и ревизии)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Връчване и предоставяне на документи на клиентите на НАП в рамките на контролни производства</span></div></a>
+                <a href="https://portal.nra.bg/details/service-third-parties" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Връчване на документи на трети лица в рамките на контролни производства (проверки и ревизии)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Връчване на документи на трети лица в рамките на контролни производства</span></div></a>
+                <a href="https://portal.nra.bg/details/subm-docs" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на документи от клиентите на НАП в рамките на контролни производства (проверки и ревизии)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Подаване на документи от ЗЛ в рамките на контролни производства</span></div></a>
+                <a href="https://portal.nra.bg/details/report-submis" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за връчени/получени и подадени документи от задължените лица в рамките на контролни производства</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка за връчени/получени и подадени документи при проверки и ревизии</span></div></a>
+                <a href="https://portal.nra.bg/details/report-current" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка относно приключилите и текущи контролни производства (проверки и ревизии)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка относно приключилите и текущи контролни производства спрямо задължените лица</span></div></a>
+                <a href="https://portal.nra.bg/details/audits-docs-submit-third-parties" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на документи от трети лица в рамките на контролни производства (проверки и ревизии)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Подаване на документи от трети лица в рамките на контролни производства</span></div></a>
+                <a href="https://portal.nra.bg/details/service-of-docs" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Връчване на документи като задължено лице и трето лице</span></div></a>
+                <a href="https://portal.nra.bg/details/report-revision-2" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Удостоверяване на възложена проверка или ревизия</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка за възложена проверка или ревизия</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Публични регистри и списъци</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/interchange-bureau" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистър на лицата, извършващи дейност по обмяна на валута</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на достъп до публичния регистър на обменните бюра</span></div></a>
+                <a href="https://portal.nra.bg/details/report-cash-terminal" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Предоставяне на справка за лица, регистрирани по Закона за данъка върху добавената стойност и лица, получили разрешение за прилагане на режим на касова отчетност на ДДС /електронна услуга със свободен достъп/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка за лица, регистрирани по Закона за данъка върху добавената стойност и лица, получили разрешение за прилагане на режим на касова отчетност на ДДС /електронна услуга със свободен достъп/ № 2657</span></div></a>
+                <a href="https://portal.nra.bg/details/reg-contr-fuel" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Публичен  регистър на обезпечения, представени от лица, извършващи сделки с течни горива по чл. 176В, ал. 10 от ЗДДС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на справка от публичен регистър на обезпечения, представени от лица, извършващи сделки с течни горива</span></div></a>
+                <a href="https://portal.nra.bg/details/ent-free-fuel" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Лица, освободени от обезпечение при придобиване на течни горива /чл. 176в, ал. 15 от ЗДДС/</span></div></a>
+                <a href="https://portal.nra.bg/details/reg-allowed-software" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Списък на разрешените за ползване софтуери за управление на продажбите в търговски обекти (СУПТО) /чл. 118, ал. 16 от ЗДДС/</span></div></a>
+                <a href="https://portal.nra.bg/details/online-store-nrareg" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Списък на електронните магазини регистрирани в НАП</span></div></a>
+                <a href="https://portal.nra.bg/details/amlm-countries" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Списък на високорискови държави съгласно Закон за мерките срещу изпирането на пари</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Списък на високорискови държави съгласно ЗМИП</span></div></a>
+                <a href="https://portal.nra.bg/details/esfp-register" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистър на одобрените модели Електронни системи с фискална памет (ЕСФП) и средства за измерване</span></div></a>
+                <a href="https://portal.nra.bg/details/fu-iasutd-maintenance-register" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистър на издадените разрешения за извършване на техническо обслужване и ремонт на ФУ/ИАСУТД</span></div></a>
+                <a href="https://portal.nra.bg/details/reg-confisc" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистър на НАП за конфискувани и отнети в полза на държавата недвижими имоти</span></div></a>
+                <a href="https://portal.nra.bg/details/precious-metals-products" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Информация за производители, вносители и/или търговци на златни и сребърни изделия</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на информация за производители, вносители и/или търговци на златни и сребърни изделия</span></div></a>
+                <a href="https://portal.nra.bg/details/gambling-registers" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистри по Закона за хазарта</span></div></a>
+                <a href="https://portal.nra.bg/details/questions-and-answers" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Система „Въпроси и отговори” по данъчното и осигурителното законодателство</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Въпроси и отговори</span></div></a>
+                <a href="https://portal.nra.bg/details/gambling-websites" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Списъци на интернет страници, чрез които се организират хазартни игри</span></div></a>
+                <a href="https://portal.nra.bg/details/register-ekapf-fpr-fuvac" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Електронни касови апарати ЕКАФП, ФПр и ФУВАС</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на списък на разрешените за използване в търговски обект фискални устройства</span></div></a>
+                <a href="https://portal.nra.bg/details/virtual-currencies" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистър на лицата, които предоставят обмяна между виртуални и признати валути без златно покритие, и на доставчиците на портфейли</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистър на лицата, които предоставят обмяна на виртуални валути</span></div></a>
+                <a href="https://portal.nra.bg/details/list-sealed-objects" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подлежащи на запечатване търговски обекти и тяхното местонахождение</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на списък на подлежащите на запечатване търговски обекти и тяхното местонахождение</span></div></a>
+                <a href="https://portal.nra.bg/details/dopk-32" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Списък на издирваните от НАП лица (чл.32 от ДОПК)</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на бюлетин на съобщенията по чл. 32 от ДОПК</span></div></a>
+                <a href="https://portal.nra.bg/details/iasutd-register" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Интегрирана автоматизирана система за управление на търговската дейност /ИАСУТД/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистър на одобрените ИАСУТД</span></div></a>
+                <a href="https://portal.nra.bg/details/register-unpaid-entities" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Списък на длъжници с неуредени публични задължения над 2 556,46 евро /чл. 182, ал. 3, т. 2 от ДОПК/</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на информация за длъжници с неуредени публични задължения</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Специални режими за облагане с ДДС - обслужване на едно гише - ONE-STOP-SHOP (OSS)</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/oss-regform-inunion" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистрационна форма – режим в Съюза</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистрация (актуал.) за прилагане на спец. режим в Съюза за облагане с ДДС на доставки на услуги с получатели данъчно незадължени лица, вътреобщностни дистанционни продажби на стоки и/или вътрешни дистанционни продажби на стоки (спец. режим в съюза) №3172</span></div></a>
+                <a href="https://portal.nra.bg/details/sd-import" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Приемане на справка-декларация за прилагане на специален режим за дистанционни продажби на стоки, внасяни от трети страни или територии</span></div></a>
+                <a href="https://portal.nra.bg/details/oss-payments-by-period" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за плащания по данъчен период</span></div></a>
+                <a href="https://portal.nra.bg/details/sd-specialregime-outside" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Приемане на справка-декларация за прилагане на специален режим извън Съюза</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на справка-декларация за прилагане на специален режим извън Съюза № 1452</span></div></a>
+                <a href="https://portal.nra.bg/details/sd-specialregime-inside" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Приемане на справка-декларация за прилагане на специален режим в Съюза</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Приемане на справка-декларация за прилагане на специален режим в Съюза № 792</span></div></a>
+                <a href="https://portal.nra.bg/details/oss-payments-by-date" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за плащания по дата на плащането</span></div></a>
+                <a href="https://portal.nra.bg/details/oss-payments-by-country" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за плащания по държава на потребление</span></div></a>
+                <a href="https://portal.nra.bg/details/regform-import-repr" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистрационна форма – внос представител</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистрация (актуализация) на данъчно задължено лице – представител за изпълнение на задълженията по специален режим за дистанционни продажби на стоки, внасяни от трети страни или територии №3171</span></div></a>
+                <a href="https://portal.nra.bg/details/deregform-import-repr" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Дерегистрационна форма – внос представител</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Прекратяване на регистрация на представител за прилагането на задълженията по режим за дистанционни продажби на стоки, внасяни от трети страни или територии №3193</span></div></a>
+                <a href="https://portal.nra.bg/details/regform-import-zl" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистрационна форма – внос ЗЛ</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистрация (актуализация) за прилагане на специален режим за дистанционни продажби на стоки, внасяни от трети страни или територии №3170</span></div></a>
+                <a href="https://portal.nra.bg/details/regform-outside-union" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистрационна форма – режим извън Съюза</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Регистрация (актуализация) за прилагане на специален режим извън съюза за облагане с данък върху добавената стойност на доставки на услуги с получатели данъчно незадължени лица, установени в Европейския съюз (специален режим извън Съюза) №3173</span></div></a>
+                <a href="https://portal.nra.bg/details/deregform-outside-union" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Дерегистрационна форма – режим извън Съюза</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Прекратяване на регистрация за прилагане на специален режим извън Съюза за облагане с данък върху добавената стойност за доставки на услуги (специален режим извън Съюза) №3195</span></div></a>
+                <a href="https://portal.nra.bg/details/deregform-inside-union" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Дерегистрационна форма – режим в Съюза</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Прекратяване на регистрация за прилагане на специален режим в Съюза за облагане с ДДС на доставки на услуги с получатели данъчно незадължени лица, вътреобщностни дистанционни продажби на стоки и/или вътрешни дистанционни продажби на стоки №3194</span></div></a>
+                <a href="https://portal.nra.bg/details/deregform-import" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Дерегистрационна форма – режим Внос</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Прекратяване на регистрация за прилагане на специален режим за дистанционни продажби на стоки, внасяни от трети страни или територии  №3196</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Специален режим за малки предприятия в Европейския съюз</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/decsmenotice" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Регистрация за режим за малки предприятия в Европейския съюз - № 3474</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предварително заявление за регистрация за режим за малки предприятия в Европейския съюз</span></div></a>
+                <a href="https://portal.nra.bg/details/decsmeupdate" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Промяна в обстоятелствата по регистрация за режим за малки предприятия в Европейския съюз - №3475</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Актуализация на заявления за регистрация за режим за малки предприятия в Европейския съюз</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Подаване на данни към CESOP</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/deccesop" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на  данни от доставчици на платежни услуги за трансгранични плащания</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Подаване на данни от доставчици на платежни услуги за трансгранични плащания</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Фискален контрол</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/report-high-fiskal-risk" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Справка за осъществен контрол върху движението на стоки с висок фискален риск</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Справка за осъществен контрол върху движението на стоки с висок фискален риск (само с пълен достъп)</span></div></a>
+                <a href="https://portal.nra.bg/details/goods-high-fiscal-risk" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на данни за превоз на стоки с висок фискален риск</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Предоставяне на уникален номер за превоз на стоки с висок фискален риск при предварително деклариране на стоки №3185</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Подаване на данни от пощенски оператори</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/postoperatorcod" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на данни за вътрешни и изходящи международни пощенски пратки с наложен платеж съгласно чл. 25б от Закона за НАП</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Подаване на данни за вътрешни и изходящи международни пощенски пратки с наложен платеж</span></div></a>
+                <a href="https://portal.nra.bg/details/postoperatorsmallpackages" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на данни за изходящи международни пощенски пратки - малки пакети и пощенски колети съгласно чл. 25б от Закона за НАП</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Подаване на данни за изходящи международни пощенски пратки - малки пакети и пощенски колети</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Управление на достъпи и на контактна информация</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/application" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подаване на заявление и управление на достъпа до упълномощени лица</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Заявление за достъп на упълномощено лице</span></div></a>
+                <a href="https://portal.nra.bg/details/notice" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Управление на достъпа до задълженото лице и подаване на известие до НАП за достъп на упълномощено лице</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Известие за достъп на упълномощено лице</span></div></a>
+                <a href="https://portal.nra.bg/details/contact-info" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Управление на електронни адреси и телефонни номера</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Управление на контактна информация</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Управление на достъпи &quot;система-система&quot;</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/decapirequest" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Управление на автентикацията за достъп до услугите на НАП достъпни през API</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Достъп до услуги на НАП през API</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Подкрепа чрез оборотен капитал за МСП, засегнати от временните противоепидемични мерки</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/isun" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Подкрепа чрез оборотен капитал за МСП, засегнати от временните противоепидемични мерки</span></div></a>
+            </div>
+        </div>
+
+        <div class="legal-section declaration-group">
+            <h2>Тестови услуги</h2>
+            <div class="legal-links">
+                <a href="https://portal.nra.bg/details/sign-component-test" target="_blank" class="legal-link declaration-item"><div style="flex:1;"><span class="legal-text">Проверка на работоспособността на компонентите за подписване на документи</span><span style="display:block;font-size:0.72rem;color:#888;line-height:1.2;margin-top:1px;">Тест на компонентите за подписване на документи</span></div></a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer id="footer">
+    <div class="footer-top">
+        <div class="footer-content">
+            <div class="footer-card">
+                <h4>Други продукти</h4>
+                <div class="footer-links-list">
+                    <a href="https://products.takecontrolsoft.eu/" target="_blank">Take Control Products</a>
+                </div>
+            </div>
+            <div class="footer-card">
+                <h4>Връзки</h4>
+                <div class="footer-links-list">
+                    <a href="terms-and-conditions.html" target="_blank">Общи условия</a>
+                </div>
+            </div>
+            <div class="footer-card">
+                <h4>Общност</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/3928521854093625" target="_blank">
+                        <img src="images/fb.jpeg" alt="Facebook">
+                        <span>Иновации в счетоводството</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 OneSpace. Всички права запазени.</p>
+    </div>
+</footer>
+
+<div class="floating-buttons">
+    <a href="https://napi.bg" target="_blank" class="floating-btn napi auto-collapse" data-tooltip="Автоматизирано подаване на декларации към НАП">
+        <div class="fab-icon">
+            <img src="https://napi.bg/favicon.png" alt="НАПИ" onerror="this.parentElement.innerHTML='🏛️'">
+        </div>
+        <span class="fab-text">НАПИ</span>
+    </a>
+    <a href="https://nsiassistant.bg" target="_blank" class="floating-btn nsi auto-collapse" data-tooltip="Помощник за годишни отчети към НСИ">
+        <div class="fab-icon">
+            <img src="https://nsiassistant.bg/favicon.png" alt="НСИ Асистент" onerror="this.parentElement.innerHTML='📊'">
+        </div>
+        <span class="fab-text">НСИ Асистент</span>
+    </a>
+</div>
+
+<script src="script.js?v=hide-whole-sections"></script>
+<script>
+function filterDeclarations(value) {
+    const query = value.toLowerCase().trim();
+    const items = document.querySelectorAll('.declaration-item');
+    const groups = document.querySelectorAll('.declaration-group');
+    items.forEach(function(item) {
+        const text = item.textContent.toLowerCase();
+        item.style.display = (query === '' || text.includes(query)) ? '' : 'none';
+    });
+    groups.forEach(function(group) {
+        const vis = group.querySelectorAll('.declaration-item:not([style*="display: none"])');
+        group.style.display = (vis.length === 0 && query !== '') ? 'none' : '';
+    });
+}
+</script>
+
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: 'a3846c9cddc76c88722a1dddb62c1006' });
+</script>
+
+<script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('pwa-install-btn');
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault(); deferredPrompt = e; installBtn.style.display = 'flex';
+    });
+    installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) { deferredPrompt.prompt(); const { outcome } = await deferredPrompt.userChoice; deferredPrompt = null; installBtn.style.display = 'none'; }
+    });
+    window.addEventListener('appinstalled', () => { installBtn.style.display = 'none'; });
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => { navigator.serviceWorker.register('/sw.js').then(() => {}).catch(() => {}); });
+    }
+</script>
+</body>
+</html>
