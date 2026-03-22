@@ -1,4 +1,4 @@
-const CACHE_NAME = 'onespace-portal-v2';
+const CACHE_NAME = 'onespace-portal-v3';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -7,7 +7,8 @@ const urlsToCache = [
   '/ministries.html',
   '/useful.html',
   '/legal.html',
-  '/calendar.html',
+  '/declarations.html',
+  '/certification.html',
   '/terms-and-conditions.html',
   '/styles.css',
   '/script.js',
